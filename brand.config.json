@@ -1,0 +1,14 @@
+{
+  "brand": { "preset": "neutral-example", "paper": "#F5F5F5", "scarlet": "#E5484D", "ink": "#17171A" },
+  "font": { "family": "brandFontFamily", "file": null, "case": "upper", "status": "pending: ждём .otf/.ttf с кириллицей от пользователя" },
+  "effects": {
+    "jumpcut": true, "faceZoom": true, "punchZoom": true, "accentCaptions": true,
+    "keySfx": true, "karaoke": true, "inserts": true, "music": false,
+    "progressBar": true, "declick": true, "watermarkRemove": true
+  },
+  "sfx": ["keyType", "whoosh", "ding"],
+  "remotionEffects": ["none"],
+  "editStyle": "balanced",
+  "inserts": { "source": "generate", "style": ["on-brand", "flat", "photoreal"], "density": "medium" },
+  "imagegen": { "provider": "gemini-webapi", "styleRefs": "assets/style-refs", "animate": "prompts" }
+}
