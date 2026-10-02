@@ -1,0 +1,28 @@
+{
+  "brand": { "preset": "mono-bw", "paper": "#FFFFFF", "ink": "#000000", "accent": null },
+  "font": {
+    "family": "Unbounded",
+    "weight": 700,
+    "file": "Unbounded-cyrillic-700.woff2 + Unbounded-latin-700.woff2",
+    "license": "OFL-1.1",
+    "case": "lower",
+    "hook": { "family": "Patsy Sans", "file": "PatsySans.ttf", "case": "upper" },
+    "stroke": "white text, black outline"
+  },
+  "effects": {
+    "jumpcut": true, "faceZoom": true, "punchZoom": true, "accentCaptions": true,
+    "keySfx": false, "karaoke": true, "inserts": true, "music": false,
+    "progressBar": false, "declick": true, "watermarkRemove": false
+  },
+  "sfx": ["none"],
+  "remotionEffects": ["none"],
+  "editStyle": "balanced",
+  "inserts": {
+    "source": "mix",
+    "style": ["photoreal", "memes"],
+    "density": "medium",
+    "layouts": ["third", "full"],
+    "memesLibrary": "remotion/public/inserts/refmemes"
+  },
+  "imagegen": { "provider": "gemini-webapi", "styleRefs": "assets/style-refs", "animate": "off" }
+}
