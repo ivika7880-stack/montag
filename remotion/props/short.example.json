@@ -1,0 +1,16 @@
+{
+  "src": "source.mp4",
+  "previewSrc": null,
+  "fps": 30,
+  "segments": [
+    { "start": 0, "end": 3, "startFrame": 0, "endFrame": 90, "tx": 0, "faceY": 40 }
+  ],
+  "words": [
+    { "text": "Пример", "from": 0, "to": 15, "accent": false },
+    { "text": "субтитра", "from": 15, "to": 30, "accent": true }
+  ],
+  "punchZooms": [],
+  "inserts": [],
+  "audioTrack": null,
+  "totalDurationInFrames": 90
+}

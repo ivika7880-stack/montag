@@ -1,0 +1,19 @@
+{
+  "src": "source.mp4",
+  "previewSrc": null,
+  "fps": 30,
+  "segments": [
+    { "start": 0, "end": 3, "startFrame": 0, "endFrame": 90 },
+    { "start": 5, "end": 8, "startFrame": 90, "endFrame": 180 }
+  ],
+  "accents": [
+    { "text": "ПРИМЕР", "frame": 20, "durationInFrames": 50 }
+  ],
+  "punchZooms": [],
+  "pushZooms": [],
+  "inserts": [],
+  "pipWindows": [],
+  "music": null,
+  "audioTrack": null,
+  "totalDurationInFrames": 180
+}

@@ -1,0 +1,13 @@
+.env
+.venv/
+node_modules/
+out/
+work/
+remotion/public/inserts/
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.log
+__pycache__/
+remotion/node_modules/

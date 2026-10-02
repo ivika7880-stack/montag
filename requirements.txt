@@ -1,0 +1,9 @@
+# Montage pipeline — Python 3.11 deps (install into .venv)
+#   python -m venv .venv
+#   .venv\Scripts\python.exe -m pip install -r requirements.txt
+mediapipe==0.10.21        # лицо/лендмарки; 0.10.21 пиннится — новее нет .solutions
+numpy==1.26.4
+opencv-python==4.10.0.84  # cv2 — кадры для faces.py
+python-dotenv==1.2.2      # .env → DEEPGRAM_API_KEY
+requests==2.34.2          # Deepgram REST + загрузки
+soundfile==0.14.0         # declick-дорожка (audio.py)
