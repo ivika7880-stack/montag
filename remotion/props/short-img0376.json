@@ -470,7 +470,36 @@
    "originY": 40.7
   }
  ],
- "inserts": [],
- "audioTrack": "audio_short-img0376.wav",
+ "inserts": [
+  {
+   "file": "inserts/img0376/meme_03_v2_0217.png",
+   "type": "image",
+   "from": 300,
+   "to": 358,
+   "layout": "half"
+  },
+  {
+   "file": "inserts/img0376/meme_15_v3_0194.png",
+   "type": "image",
+   "from": 431,
+   "to": 500,
+   "layout": "half"
+  },
+  {
+   "file": "inserts/img0376/meme_10_v3_0116.png",
+   "type": "image",
+   "from": 582,
+   "to": 611,
+   "layout": "half"
+  },
+  {
+   "file": "inserts/img0376/meme_13_v3_0155.png",
+   "type": "image",
+   "from": 798,
+   "to": 839,
+   "layout": "half"
+  }
+ ],
+ "audioTrack": null,
  "totalDurationInFrames": 883
 }
