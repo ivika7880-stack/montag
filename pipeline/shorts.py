@@ -22,8 +22,8 @@ from pathlib import Path
 
 CANVAS_W = 1080
 CANVAS_H = 1920
-VIDEO_W = round(CANVAS_H * 16 / 9)   # 3413: source scaled to fill height
-TX_MIN = CANVAS_W - VIDEO_W           # -2333 (clamp so no black edge)
+VIDEO_W = round(CANVAS_H * 16 / 9)   # 3413: 16:9 source scaled to fill height (default)
+HOOK_S = 3.0                          # hook plate lifetime, seconds
 
 
 def load(work: Path, name: str):
@@ -35,6 +35,14 @@ def probe_frames(path: Path, fps: float) -> int:
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
          "-of", "csv=p=0", str(path)], text=True).strip()
     return int(round(float(dur) * fps))
+
+
+def probe_size(path: Path):
+    out = subprocess.check_output(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+         "stream=width,height", "-of", "csv=p=0", str(path)], text=True).strip()
+    w, h = out.split(",")
+    return int(w), int(h)
 
 
 def face_center(faces, t):
@@ -56,6 +64,14 @@ def build(work: Path, props_dir: Path, draft: bool):
     shorts = data["shorts"]
     media = data.get("media", "source")  # base media name in public/ (remakes use their own)
     preview = (props_dir.parent / "public" / f"{media}_preview.mp4").exists()
+
+    # scaled-to-height width of the source: 16:9 -> 3413 (crop on face), 9:16 -> 1080 (tx = 0)
+    media_file = props_dir.parent / "public" / f"{media}.mp4"
+    video_w = VIDEO_W
+    if media_file.exists():
+        sw, sh_ = probe_size(media_file)
+        video_w = round(CANVAS_H * sw / sh_)
+    tx_min = min(0, CANVAS_W - video_w)
 
     for sh in shorts:
         spans = sh["spans"]
@@ -89,7 +105,7 @@ def build(work: Path, props_dir: Path, draft: bool):
         segments = []
         for a, b in spans:
             fx, fy = face_center(faces, (a + b) / 2)
-            tx = max(TX_MIN, min(0, round(CANVAS_W / 2 - fx * VIDEO_W)))
+            tx = max(tx_min, min(0, round(CANVAS_W / 2 - fx * video_w)))
             segments.append({
                 "start": a, "end": b,
                 "startFrame": round(a * fps), "endFrame": round(b * fps),
@@ -156,6 +172,9 @@ def build(work: Path, props_dir: Path, draft: bool):
             "src": f"{media}.mp4",
             "previewSrc": f"{media}_preview.mp4" if preview else None,
             "fps": fps,
+            "videoW": video_w,
+            "hook": ({"text": sh["hook"], "from": 0, "to": round(HOOK_S * fps)}
+                     if sh.get("hook") else None),
             "segments": segments,
             "words": kw,
             "punchZooms": punch,

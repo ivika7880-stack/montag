@@ -10,7 +10,7 @@ import {
   useCurrentFrame,
 } from "remotion";
 import { Audio, Video } from "@remotion/media";
-import { brandFontFamily } from "./fonts";
+import { brandFontFamily, hookFontFamily } from "./fonts";
 
 export type ShortSeg = {
   start: number;
@@ -33,10 +33,14 @@ export type ShortInsert = {
   coverBox?: { x: number; y: number; w: number; h: number };
 };
 
+export type ShortHook = { text: string; from: number; to: number };
+
 export type ShortsProps = {
   src: string;
   previewSrc: string | null;
   fps: number;
+  videoW?: number; // source width scaled to canvas height (16:9 → 3413, 9:16 → 1080)
+  hook?: ShortHook | null; // hook plate (Patsy Sans) at the start
   segments: ShortSeg[];
   words: ShortWord[];
   punchZooms: ShortPunch[];
@@ -46,7 +50,7 @@ export type ShortsProps = {
 };
 
 const CANVAS_H = 1920;
-const VIDEO_W = Math.round((CANVAS_H * 16) / 9); // 3413: source scaled to fill height
+const DEFAULT_VIDEO_W = Math.round((CANVAS_H * 16) / 9); // 3413: 16:9 source scaled to fill height
 // Per-layout insert height and how far the speaker shifts down to stay clear.
 // "full" covers the speaker entirely (voice keeps playing) — no shift needed.
 const INSERT_LAYOUT = {
@@ -56,8 +60,13 @@ const INSERT_LAYOUT = {
 } as const;
 const layoutOf = (i: ShortInsert) => INSERT_LAYOUT[i.layout ?? "third"];
 
-const PAPER = "#F5F5F5";
-const SCARLET = "#E5484D";
+// ч/б профиль (mono-bw): бумага #FFF, чернила #000, акцента-цвета нет
+const PAPER = "#FFFFFF";
+const INK = "#000000";
+const STROKE = {
+  WebkitTextStroke: "12px #000",
+  paintOrder: "stroke fill",
+} as React.CSSProperties;
 const OUT_QUINT = Easing.bezier(0.16, 1, 0.3, 1);
 
 // Aggressive punch-zoom on accent words.
@@ -187,7 +196,7 @@ const Captions: React.FC<{ words: ShortWord[] }> = ({ words }) => {
           fontSize: 58,
           lineHeight: 1.04,
           letterSpacing: "0.01em",
-          textTransform: "uppercase",
+          textTransform: "lowercase",
           textAlign: "center",
           maxWidth: "100%",
         }}
@@ -196,11 +205,14 @@ const Captions: React.FC<{ words: ShortWord[] }> = ({ words }) => {
           <span
             key={start + k}
             style={{
-              color: w.accent ? SCARLET : PAPER,
+              // обычное слово: белый с чёрной обводкой; акцент: инверсия (чёрное на белой плашке) + рост
+              color: w.accent ? INK : PAPER,
+              backgroundColor: w.accent ? PAPER : "transparent",
+              padding: w.accent ? "0.04em 0.2em" : 0,
+              ...(w.accent ? {} : STROKE),
               transform: w.accent ? "scale(1.14)" : "none",
               transformOrigin: "center bottom",
               overflowWrap: "anywhere",
-              textShadow: "0 6px 30px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.6)",
             }}
           >
             {w.text}
@@ -211,25 +223,57 @@ const Captions: React.FC<{ words: ShortWord[] }> = ({ words }) => {
   );
 };
 
+const HookPlate: React.FC<{ hook: ShortHook }> = ({ hook }) => {
+  const frame = useCurrentFrame();
+  if (frame < hook.from || frame >= hook.to) return null;
+  const dur = hook.to - hook.from;
+  const local = frame - hook.from;
+  const opacity = interpolate(local, [0, 6, dur - 8, dur], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const lift = interpolate(local, [0, 10], [24, 0], {
+    easing: OUT_QUINT,
+    extrapolateRight: "clamp",
+  });
+  return (
+    <AbsoluteFill style={{ justifyContent: "flex-start", alignItems: "center", padding: "170px 64px 0" }}>
+      <div
+        style={{
+          opacity,
+          transform: `translateY(${lift}px)`,
+          fontFamily: hookFontFamily,
+          fontSize: 118,
+          lineHeight: 1,
+          textTransform: "uppercase",
+          textAlign: "center",
+          color: PAPER,
+          ...STROKE,
+          WebkitTextStroke: "16px #000",
+        }}
+      >
+        {hook.text}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 export const Shorts916: React.FC<ShortsProps> = ({
   src,
   previewSrc,
+  videoW = DEFAULT_VIDEO_W,
+  hook,
   segments,
   words,
   punchZooms,
   inserts,
   audioTrack,
-  totalDurationInFrames,
 }) => {
   const frame = useCurrentFrame();
   const { scale, originY } = zoomAt(frame, punchZooms);
   const { insert: activeInsert, amount: insertAmount } = activeInsertAt(frame, inserts);
   const speakerSrc =
     previewSrc && !getRemotionEnvironment().isRendering ? previewSrc : src;
-  const progress = interpolate(frame, [0, totalDurationInFrames], [0, 100], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
@@ -246,7 +290,7 @@ export const Shorts916: React.FC<ShortsProps> = ({
               durationInFrames={Math.max(1, s.endFrame - s.startFrame)}
               premountFor={30}
             >
-              <div style={{ position: "absolute", width: VIDEO_W, height: CANVAS_H, left: s.tx, top: 0 }}>
+              <div style={{ position: "absolute", width: videoW, height: CANVAS_H, left: s.tx, top: 0 }}>
                 <Video
                   src={staticFile(speakerSrc)}
                   trimBefore={s.startFrame}
@@ -264,8 +308,7 @@ export const Shorts916: React.FC<ShortsProps> = ({
       <InsertTop insert={activeInsert} opacity={insertAmount} />
       <Captions words={words} />
 
-      {/* progress bar */}
-      <div style={{ position: "absolute", top: 0, left: 0, height: 8, width: `${progress}%`, backgroundColor: SCARLET }} />
+      {hook ? <HookPlate hook={hook} /> : null}
 
       {audioTrack ? <Audio src={staticFile(audioTrack)} /> : null}
     </AbsoluteFill>
