@@ -22,7 +22,7 @@
     "style": ["photoreal", "memes"],
     "density": "medium",
     "layouts": ["third", "full"],
-    "memesLibrary": "remotion/public/inserts/refmemes"
+    "memesLibrary": "assets/memes-ref"
   },
   "imagegen": { "provider": "gemini-webapi", "styleRefs": "assets/style-refs", "animate": "off" }
 }
