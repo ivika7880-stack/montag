@@ -50,7 +50,7 @@ export const PlateCaptions: React.FC<{
         transform: `translateY(${(1 - appear) * 14}px)`,
       }}
     >
-      {splitLines(p.text).map((line, i) => (
+      {(p.text ? splitLines(p.text) : []).map((line, i) => (
         <span
           key={i}
           style={{

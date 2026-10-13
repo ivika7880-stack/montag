@@ -10,10 +10,12 @@ import type { ShortsProps } from "./Shorts916";
 import mainExample from "../props/main169.example.json";
 import shortExample from "../props/short.example.json";
 import shortImg0376 from "../props/short-img0376.json";
+import shortImg0162 from "../props/short-img0162.json";
 
 const defaultMainProps = mainExample as unknown as MainProps;
 const defaultShortProps = shortExample as unknown as ShortsProps;
 const img0376Props = shortImg0376 as unknown as ShortsProps;
+const img0162Props = shortImg0162 as unknown as ShortsProps;
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -50,6 +52,18 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={img0376Props}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.totalDurationInFrames,
+        })}
+      />
+      <Composition
+        id="Short-Img0162"
+        component={Shorts916}
+        durationInFrames={img0162Props.totalDurationInFrames}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={img0162Props}
         calculateMetadata={({ props }) => ({
           durationInFrames: props.totalDurationInFrames,
         })}

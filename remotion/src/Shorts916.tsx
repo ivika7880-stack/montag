@@ -5,12 +5,17 @@ import {
   Img,
   Series,
   getRemotionEnvironment,
+  Sequence,
   interpolate,
   staticFile,
   useCurrentFrame,
 } from "remotion";
 import { Audio, Video } from "@remotion/media";
 import { brandFontFamily, hookFontFamily } from "./fonts";
+import { CardStack } from "./collage/CardStack";
+import { PlateCaptions } from "./collage/PlateCaptions";
+import { buildPhrases } from "./collage/phrases";
+import { RedScene } from "./collage/RedScene";
 
 export type ShortSeg = {
   start: number;
@@ -33,6 +38,14 @@ export type ShortInsert = {
   coverBox?: { x: number; y: number; w: number; h: number };
 };
 
+// Коллажная сцена: полноэкранный красный фон + стопка карточек поверх спикера (голос идёт).
+export type ShortScene = {
+  from: number;
+  to: number;
+  stamp?: string;
+  cards: { from: number; src: string }[]; // from — абсолютный кадр композиции
+};
+
 export type ShortHook = { text: string; from: number; to: number };
 
 export type ShortsProps = {
@@ -45,6 +58,8 @@ export type ShortsProps = {
   words: ShortWord[];
   punchZooms: ShortPunch[];
   inserts: ShortInsert[];
+  scenes?: ShortScene[]; // коллажные сцены (captionStyle "plate")
+  captionStyle?: "karaoke" | "plate"; // default karaoke
   audioTrack: string | null;
   totalDurationInFrames: number;
 };
@@ -223,6 +238,17 @@ const Captions: React.FC<{ words: ShortWord[] }> = ({ words }) => {
   );
 };
 
+// Плашки-субтитры: внутри коллажной сцены — слева сверху, на спикере — снизу по центру.
+const PlateCaptionsAuto: React.FC<{ words: ShortWord[]; scenes: ShortScene[] }> = ({
+  words,
+  scenes,
+}) => {
+  const frame = useCurrentFrame();
+  const inScene = scenes.some((sc) => frame >= sc.from && frame < sc.to);
+  const phrases = React.useMemo(() => buildPhrases(words), [words]);
+  return <PlateCaptions phrases={phrases} position={inScene ? "top-left" : "bottom"} />;
+};
+
 const HookPlate: React.FC<{ hook: ShortHook }> = ({ hook }) => {
   const frame = useCurrentFrame();
   if (frame < hook.from || frame >= hook.to) return null;
@@ -267,6 +293,8 @@ export const Shorts916: React.FC<ShortsProps> = ({
   words,
   punchZooms,
   inserts,
+  scenes = [],
+  captionStyle = "karaoke",
   audioTrack,
 }) => {
   const frame = useCurrentFrame();
@@ -306,7 +334,21 @@ export const Shorts916: React.FC<ShortsProps> = ({
       </AbsoluteFill>
 
       <InsertTop insert={activeInsert} opacity={insertAmount} />
-      <Captions words={words} />
+      {scenes.map((sc, i) => (
+        <Sequence key={i} from={sc.from} durationInFrames={sc.to - sc.from} layout="none">
+          <RedScene stamp={sc.stamp}>
+            <CardStack
+              to={sc.to - sc.from}
+              cards={sc.cards.map((c) => ({ from: c.from - sc.from, src: c.src }))}
+            />
+          </RedScene>
+        </Sequence>
+      ))}
+      {captionStyle === "plate" ? (
+        <PlateCaptionsAuto words={words} scenes={scenes} />
+      ) : (
+        <Captions words={words} />
+      )}
 
       {hook ? <HookPlate hook={hook} /> : null}
 

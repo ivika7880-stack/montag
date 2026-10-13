@@ -111,7 +111,11 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
         lo1 = max(prev_kept_end, first["start"] - SEARCH_PAD_S)
         cut_start = quietest_point(times, rms, lo1, first["start"])
         hi2 = min(next_kept_start, last["end"] + SEARCH_PAD_S)
-        cut_end = quietest_point(times, rms, last["end"], hi2)
+        # ASR timings of a deleted word can overrun the next kept word's start (overlapping
+        # takes): then search the quietest point BEFORE that start, else the midpoint would
+        # land inside the kept word and clip its onset.
+        lo2 = min(last["end"], hi2 - SEARCH_PAD_S)
+        cut_end = quietest_point(times, rms, lo2, hi2)
         if cut_end > cut_start:
             cut_intervals.append([cut_start, cut_end])
 

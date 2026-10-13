@@ -168,6 +168,33 @@ def build(work: Path, props_dir: Path, draft: bool):
                 insert_events.append(ev)
         insert_events.sort(key=lambda e: e["from"])
 
+        # collage scenes (work/<id>/scenes.json): red background + card stack over the speaker
+        scene_events = []
+        sc_file = work / "scenes.json"
+        if sc_file.exists():
+            wbi = {w["i"]: w for w in words}
+
+            def frame_of(idx, end=False):
+                w = wbi.get(idx)
+                if not w:
+                    return None
+                t = out_t(w["end"] if end else w["start"])
+                return None if t is None else round(t * fps)
+
+            for sc in json.loads(sc_file.read_text(encoding="utf-8"))["scenes"]:
+                f0, f1 = frame_of(sc["anchorWord"]), frame_of(sc["endWord"], end=True)
+                if f0 is None or f1 is None:            # anchor cut out or not in this short
+                    continue
+                cards = []
+                for c in sc["cards"]:
+                    cf = frame_of(c["anchorWord"])
+                    if cf is not None:
+                        cards.append({"from": max(f0, cf), "src": f"inserts/{c['file']}"})
+                if cards:
+                    scene_events.append({"from": f0, "to": min(f1, total), "cards": cards,
+                                         **({"stamp": sc["stamp"]} if sc.get("stamp") else {})})
+            scene_events.sort(key=lambda e: e["from"])
+
         props = {
             "src": f"{media}.mp4",
             "previewSrc": f"{media}_preview.mp4" if preview else None,
@@ -179,6 +206,8 @@ def build(work: Path, props_dir: Path, draft: bool):
             "words": kw,
             "punchZooms": punch,
             "inserts": insert_events,
+            "scenes": scene_events,
+            "captionStyle": sh.get("captionStyle", "karaoke"),
             "audioTrack": None,
             "totalDurationInFrames": total,
         }
@@ -186,7 +215,7 @@ def build(work: Path, props_dir: Path, draft: bool):
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(props, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"OK {sh['id']}: {total}f ({total/fps:.1f}s) segs={len(segments)} "
-              f"words={len(kw)} accents={len(punch)} inserts={len(insert_events)}")
+              f"words={len(kw)} accents={len(punch)} inserts={len(insert_events)} scenes={len(scene_events)}")
 
 
 if __name__ == "__main__":
