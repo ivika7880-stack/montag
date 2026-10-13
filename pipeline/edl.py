@@ -27,10 +27,19 @@ WIN_S = 0.020          # RMS window, 20 ms
 SEARCH_PAD_S = 0.150   # how far around a boundary we search for silence
 MIN_GAP_S = 0.024      # if boundary corridor is narrower, use its midpoint
 MERGE_S = 0.040        # merge keep-segments separated by less than this
-MIN_KEEP_S = 0.150     # drop keep-segments shorter than this
-MAX_PAUSE_S = 0.35     # gaps between kept words longer than this get shrunk
-KEEP_TAIL_S = 0.12     # pause left after a kept word
-KEEP_HEAD_S = 0.10     # pause left before the next kept word
+MIN_KEEP_S = 0.060     # drop keep-segments shorter than this (short words between cuts must survive)
+# Tight jump-cut profile (micro-pauses go too): every gap longer than MAX_PAUSE_S is cut
+# down to KEEP_TAIL_S + KEEP_HEAD_S (~80 ms of air), snapped to real silence in the audio.
+MAX_PAUSE_S = 0.12     # gaps between kept words longer than this get shrunk
+KEEP_TAIL_S = 0.04     # air left after a kept word
+KEEP_HEAD_S = 0.04     # air left before the next kept word
+EDGE_LOUD_RMS = 0.006  # RMS (~-44 dBFS) above which a cut edge would be inside speech
+EDGE_SHIFT_MAX_S = 0.12  # max distance a cut edge may be pushed away from a word to dodge speech
+# ASR sometimes drops a word entirely; its audio then sits inside a "gap" between kept words.
+# Speech-level audio inside a gap is protected, only the real silence around it is cut.
+SPEECH_RMS = 0.010     # RMS (~-40 dBFS) counted as speech inside a gap
+SPEECH_MIN_S = 0.06    # shortest loud stretch that counts as an untranscribed word
+SPEECH_PAD_S = 0.05    # air kept around such a stretch
 HEAD_LEAD_S = 0.30     # silence kept before the very first word
 TAIL_LEAD_S = 0.80     # silence kept after the very last word
 
@@ -59,6 +68,46 @@ def quietest_point(times, rms, lo, hi):
     seg_t = times[mask]
     seg_r = rms[mask]
     return float(seg_t[int(np.argmin(seg_r))])
+
+
+def rms_at(times, rms, t):
+    return float(rms[int(np.argmin(np.abs(times - t)))])
+
+
+def safe_cut(times, rms, a_end, b_start):
+    """Cut the gap between two kept words down to KEEP_TAIL_S + KEEP_HEAD_S of air.
+
+    ASR word edges are only approximate (they can overlap the neighbour or end early), so each
+    edge is nudged away from the word while the audio right next to it is still loud.
+    """
+    cs, ce = a_end + KEEP_TAIL_S, b_start - KEEP_HEAD_S
+    limit = EDGE_SHIFT_MAX_S
+    while limit > 0 and cs < ce and rms_at(times, rms, cs - 0.012) > EDGE_LOUD_RMS:
+        cs += HOP_S
+        limit -= HOP_S
+    limit = EDGE_SHIFT_MAX_S
+    while limit > 0 and ce > cs and rms_at(times, rms, ce + 0.012) > EDGE_LOUD_RMS:
+        ce -= HOP_S
+        limit -= HOP_S
+    return [cs, ce]
+
+
+def gap_cuts(times, rms, a_end, b_start):
+    """Cut intervals for the gap between two kept words, never through untranscribed speech."""
+    idx = np.where((times >= a_end) & (times <= b_start) & (rms > SPEECH_RMS))[0]
+    zones = []
+    if idx.size:
+        for run in np.split(idx, np.where(np.diff(idx) > 1)[0] + 1):
+            t0, t1 = float(times[run[0]]), float(times[run[-1]])
+            if t1 - t0 >= SPEECH_MIN_S:
+                zones.append([t0 - SPEECH_PAD_S, t1 + SPEECH_PAD_S])
+    zones = merge_intervals(zones)
+    cuts, cursor = [], a_end
+    for z0, z1 in zones + [[b_start, b_start]]:
+        if z0 - cursor > MAX_PAUSE_S:
+            cuts.append(safe_cut(times, rms, cursor, z0))
+        cursor = max(cursor, z1)
+    return cuts
 
 
 def merge_intervals(intervals):
@@ -123,7 +172,7 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
     for a, b in zip(kept_words, kept_words[1:]):
         gap = b["start"] - a["end"]
         if gap > MAX_PAUSE_S:
-            cut_intervals.append([a["end"] + KEEP_TAIL_S, b["start"] - KEEP_HEAD_S])
+            cut_intervals.extend(gap_cuts(times, rms, a["end"], b["start"]))
 
     # --- pass 3: head/tail trim ---
     if kept_words:
