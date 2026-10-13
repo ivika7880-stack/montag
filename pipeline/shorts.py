@@ -16,6 +16,7 @@ Usage:
   python shorts.py <work_dir> <remotion_props_dir>          # build props
 """
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -78,18 +79,36 @@ def build(work: Path, props_dir: Path, draft: bool):
         fixes = {int(k): v for k, v in sh.get("fixes", {}).items()}
         accents = set(sh.get("accents", []))
 
-        # source-time -> output-time (seconds) within this short's spans
-        def out_t(src):
+        # source-time -> output-time (seconds) within this short's spans.
+        # With a delete.json (full pipeline) a kept word whose ASR start lands on a seam (tight
+        # cuts leave only ~40 ms of air) is snapped to the nearest span edge instead of dropped.
+        dj = work / "delete.json"
+        deleted = set()
+        if dj.exists():
+            for q in json.loads(dj.read_text(encoding="utf-8"))["delete"]:
+                deleted |= set(range(q["from"], q["to"] + 1))
+        snap = dj.exists()
+
+        def out_t(src, word_i=None):
             acc = 0.0
             for a, b in spans:
                 if a <= src <= b:
                     return acc + (src - a)
                 acc += b - a
+            if snap and word_i is not None and word_i not in deleted:
+                acc, best = 0.0, None
+                for a, b in spans:
+                    for edge, o in ((a, acc), (b, acc + b - a)):
+                        if best is None or abs(src - edge) < best[0]:
+                            best = (abs(src - edge), o)
+                    acc += b - a
+                if best and best[0] <= 0.35:
+                    return best[1]
             return None
 
         # words falling inside the spans, in order
-        wlist = [w for w in words if out_t(w["start"]) is not None]
-        wlist.sort(key=lambda w: out_t(w["start"]))
+        wlist = [w for w in words if out_t(w["start"], w["i"]) is not None]
+        wlist.sort(key=lambda w: out_t(w["start"], w["i"]))
 
         if draft:
             lines = [f"# {sh['id']} — {sh['title']}  ({sum(b-a for a,b in spans):.1f}s)"]
@@ -119,8 +138,9 @@ def build(work: Path, props_dir: Path, draft: bool):
             txt = fixes.get(w["i"], w["w"])
             if txt == "":
                 continue
-            kw.append({"text": txt, "from": round(out_t(w["start"]) * fps),
-                       "accent": w["i"] in accents})
+            kw.append({"text": txt, "from": round(out_t(w["start"], w["i"]) * fps),
+                       "accent": w["i"] in accents,
+                       "brk": bool(re.search(r"[.,!?…:;]$", w.get("pw", "")))})  # phrase boundary
         for idx, k in enumerate(kw):
             nxt = kw[idx + 1]["from"] if idx + 1 < len(kw) else k["from"] + 12
             k["to"] = max(k["from"] + 2, min(nxt, k["from"] + 45))
@@ -130,7 +150,7 @@ def build(work: Path, props_dir: Path, draft: bool):
         for w in wlist:
             if w["i"] in accents:
                 _, fy = face_center(faces, w["start"])
-                punch.append({"from": round(out_t(w["start"]) * fps) - 4,
+                punch.append({"from": round(out_t(w["start"], w["i"]) * fps) - 4,
                               "originY": round(fy * 100, 1)})
 
         # b-roll inserts anchored inside this short; layout: third (default) / half / full
@@ -178,7 +198,10 @@ def build(work: Path, props_dir: Path, draft: bool):
                 w = wbi.get(idx)
                 if not w:
                     return None
-                t = out_t(w["end"] if end else w["start"])
+                t = out_t(w["end"] if end else w["start"], idx)
+                if t is None and end:                  # ASR end stretched far over a cut silence
+                    t = out_t(w["start"], idx)
+                    t = None if t is None else t + 0.4
                 return None if t is None else round(t * fps)
 
             for sc in json.loads(sc_file.read_text(encoding="utf-8"))["scenes"]:

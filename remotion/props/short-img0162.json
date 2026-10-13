@@ -6,146 +6,314 @@
  "hook": null,
  "segments": [
   {
-   "start": 21.015,
-   "end": 30.24,
-   "startFrame": 630,
-   "endFrame": 907,
+   "start": 21.314,
+   "end": 29.702,
+   "startFrame": 639,
+   "endFrame": 891,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 31.68,
-   "end": 43.52,
+   "end": 36.674,
    "startFrame": 950,
-   "endFrame": 1306,
+   "endFrame": 1100,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 37.702,
+   "end": 43.086,
+   "startFrame": 1131,
+   "endFrame": 1293,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 44.155,
-   "end": 58.475,
+   "end": 45.094,
    "startFrame": 1325,
-   "endFrame": 1754,
+   "endFrame": 1353,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 47.878,
+   "end": 58.118,
+   "startFrame": 1436,
+   "endFrame": 1744,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 58.79,
-   "end": 67.35,
+   "end": 60.762,
    "startFrame": 1764,
-   "endFrame": 2020,
+   "endFrame": 1823,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 68.71,
-   "end": 84.505,
-   "startFrame": 2061,
-   "endFrame": 2535,
+   "start": 62.39,
+   "end": 67.054,
+   "startFrame": 1872,
+   "endFrame": 2012,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 68.826,
+   "end": 72.346,
+   "startFrame": 2065,
+   "endFrame": 2170,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 73.478,
+   "end": 76.57,
+   "startFrame": 2204,
+   "endFrame": 2297,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 78.41,
+   "end": 84.466,
+   "startFrame": 2352,
+   "endFrame": 2534,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 87.698,
-   "end": 93.72,
+   "end": 93.57,
    "startFrame": 2631,
-   "endFrame": 2812,
+   "endFrame": 2807,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 94.118,
-   "end": 101.12,
+   "end": 97.334,
    "startFrame": 2824,
-   "endFrame": 3034,
+   "endFrame": 2920,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 109.735,
-   "end": 118.775,
-   "startFrame": 3292,
-   "endFrame": 3563,
+   "start": 98.002,
+   "end": 100.722,
+   "startFrame": 2940,
+   "endFrame": 3022,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 109.846,
+   "end": 118.51,
+   "startFrame": 3295,
+   "endFrame": 3555,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 118.87,
-   "end": 128.23,
+   "end": 127.602,
    "startFrame": 3566,
-   "endFrame": 3847,
+   "endFrame": 3828,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 128.55,
-   "end": 144.035,
+   "end": 135.954,
    "startFrame": 3857,
-   "endFrame": 4321,
+   "endFrame": 4079,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 148.44,
-   "end": 175.525,
+   "start": 136.178,
+   "end": 136.634,
+   "startFrame": 4085,
+   "endFrame": 4099,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 137.158,
+   "end": 138.146,
+   "startFrame": 4115,
+   "endFrame": 4144,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 139.95,
+   "end": 142.846,
+   "startFrame": 4198,
+   "endFrame": 4285,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 148.446,
+   "end": 153.09,
    "startFrame": 4453,
-   "endFrame": 5266,
+   "endFrame": 4593,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 164.93,
+   "end": 168.97,
+   "startFrame": 4948,
+   "endFrame": 5069,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 170.366,
+   "end": 174.834,
+   "startFrame": 5111,
+   "endFrame": 5245,
    "tx": 0,
    "faceY": 40.0
   },
   {
    "start": 179.238,
-   "end": 200.385,
+   "end": 182.386,
    "startFrame": 5377,
-   "endFrame": 6012,
+   "endFrame": 5472,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 201.345,
-   "end": 222.838,
-   "startFrame": 6040,
-   "endFrame": 6685,
+   "start": 182.874,
+   "end": 187.434,
+   "startFrame": 5486,
+   "endFrame": 5623,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 235.53,
-   "end": 243.45,
-   "startFrame": 7066,
-   "endFrame": 7304,
+   "start": 192.242,
+   "end": 194.486,
+   "startFrame": 5767,
+   "endFrame": 5835,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 243.85,
+   "start": 196.266,
+   "end": 196.366,
+   "startFrame": 5888,
+   "endFrame": 5891,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 197.698,
+   "end": 199.474,
+   "startFrame": 5931,
+   "endFrame": 5984,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 201.514,
+   "end": 202.93,
+   "startFrame": 6045,
+   "endFrame": 6088,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 207.61,
+   "end": 213.766,
+   "startFrame": 6228,
+   "endFrame": 6413,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 216.89,
+   "end": 218.414,
+   "startFrame": 6507,
+   "endFrame": 6552,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 235.57,
+   "end": 235.918,
+   "startFrame": 7067,
+   "endFrame": 7078,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 236.406,
+   "end": 243.246,
+   "startFrame": 7092,
+   "endFrame": 7297,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 243.95,
+   "end": 245.25,
+   "startFrame": 7318,
+   "endFrame": 7358,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 245.994,
+   "end": 247.922,
+   "startFrame": 7380,
+   "endFrame": 7438,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 251.278,
+   "end": 256.458,
+   "startFrame": 7538,
+   "endFrame": 7694,
+   "tx": 0,
+   "faceY": 40.0
+  },
+  {
+   "start": 257.018,
    "end": 257.095,
-   "startFrame": 7316,
+   "startFrame": 7711,
    "endFrame": 7713,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 263.26,
-   "end": 270.14,
-   "startFrame": 7898,
-   "endFrame": 8104,
+   "start": 263.294,
+   "end": 269.954,
+   "startFrame": 7899,
+   "endFrame": 8099,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 279.835,
-   "end": 285.755,
-   "startFrame": 8395,
-   "endFrame": 8573,
+   "start": 279.93,
+   "end": 285.206,
+   "startFrame": 8398,
+   "endFrame": 8556,
    "tx": 0,
    "faceY": 40.0
   },
   {
-   "start": 285.835,
-   "end": 288.035,
-   "startFrame": 8575,
-   "endFrame": 8641,
+   "start": 285.95,
+   "end": 286.814,
+   "startFrame": 8578,
+   "endFrame": 8604,
    "tx": 0,
    "faceY": 40.0
   }
@@ -153,2730 +321,3105 @@
  "words": [
   {
    "text": "непопулярное",
-   "from": 9,
+   "from": 0,
    "accent": true,
-   "to": 35
+   "brk": false,
+   "to": 26
   },
   {
    "text": "мнение",
-   "from": 35,
+   "from": 26,
    "accent": false,
-   "to": 50
+   "brk": false,
+   "to": 41
   },
   {
    "text": "от",
-   "from": 50,
+   "from": 41,
    "accent": false,
-   "to": 55
+   "brk": false,
+   "to": 46
   },
   {
    "text": "психолога",
-   "from": 55,
+   "from": 46,
    "accent": false,
-   "to": 76
+   "brk": true,
+   "to": 67
   },
   {
    "text": "но",
-   "from": 76,
+   "from": 67,
    "accent": false,
-   "to": 81
+   "brk": false,
+   "to": 72
   },
   {
    "text": "если",
-   "from": 81,
+   "from": 72,
    "accent": false,
-   "to": 86
+   "brk": false,
+   "to": 77
   },
   {
    "text": "вы",
-   "from": 86,
+   "from": 77,
    "accent": false,
-   "to": 91
+   "brk": false,
+   "to": 82
   },
   {
    "text": "меня",
-   "from": 91,
+   "from": 82,
    "accent": false,
-   "to": 98
+   "brk": false,
+   "to": 89
   },
   {
    "text": "поймете",
-   "from": 98,
+   "from": 89,
    "accent": false,
-   "to": 115
+   "brk": true,
+   "to": 106
   },
   {
    "text": "то",
-   "from": 115,
+   "from": 106,
    "accent": false,
-   "to": 117
+   "brk": false,
+   "to": 108
   },
   {
    "text": "вам",
-   "from": 117,
+   "from": 108,
    "accent": false,
+   "brk": false,
+   "to": 113
+  },
+  {
+   "text": "правда",
+   "from": 113,
+   "accent": false,
+   "brk": false,
    "to": 122
   },
   {
-   "text": "правда",
+   "text": "станет",
    "from": 122,
    "accent": false,
-   "to": 131
-  },
-  {
-   "text": "станет",
-   "from": 131,
-   "accent": false,
-   "to": 143
+   "brk": false,
+   "to": 134
   },
   {
    "text": "проще",
-   "from": 143,
+   "from": 134,
    "accent": false,
-   "to": 158
+   "brk": false,
+   "to": 149
   },
   {
    "text": "строить",
-   "from": 158,
+   "from": 149,
    "accent": false,
-   "to": 172
+   "brk": false,
+   "to": 163
   },
   {
    "text": "отношения",
-   "from": 172,
+   "from": 163,
    "accent": false,
-   "to": 189
+   "brk": false,
+   "to": 180
   },
   {
    "text": "и",
-   "from": 189,
+   "from": 180,
    "accent": false,
-   "to": 196
+   "brk": false,
+   "to": 187
   },
   {
    "text": "взаимодействовать",
-   "from": 196,
+   "from": 187,
    "accent": false,
-   "to": 218
+   "brk": false,
+   "to": 209
   },
   {
    "text": "с противоположным",
-   "from": 218,
+   "from": 209,
    "accent": false,
-   "to": 247
+   "brk": false,
+   "to": 238
   },
   {
    "text": "полом",
-   "from": 247,
+   "from": 238,
    "accent": false,
-   "to": 278
+   "brk": true,
+   "to": 253
   },
   {
    "text": "огромное",
-   "from": 278,
+   "from": 253,
    "accent": false,
-   "to": 292
+   "brk": false,
+   "to": 267
   },
   {
    "text": "количество",
-   "from": 292,
+   "from": 267,
    "accent": false,
-   "to": 307
+   "brk": false,
+   "to": 282
   },
   {
    "text": "моих",
-   "from": 307,
+   "from": 282,
    "accent": false,
-   "to": 316
+   "brk": false,
+   "to": 291
   },
   {
    "text": "коллег захейтило",
-   "from": 316,
+   "from": 291,
    "accent": false,
-   "to": 324
+   "brk": false,
+   "to": 298
   },
   {
    "text": "этого",
-   "from": 324,
+   "from": 298,
    "accent": false,
-   "to": 355
+   "brk": false,
+   "to": 330
   },
   {
    "text": "мужчину",
-   "from": 355,
+   "from": 330,
    "accent": false,
-   "to": 374
+   "brk": false,
+   "to": 349
   },
   {
    "text": "за",
-   "from": 374,
+   "from": 349,
    "accent": false,
-   "to": 384
+   "brk": false,
+   "to": 358
   },
   {
    "text": "бытовой",
-   "from": 384,
+   "from": 358,
    "accent": false,
-   "to": 400
+   "brk": false,
+   "to": 375
   },
   {
    "text": "инфантилизм",
-   "from": 400,
+   "from": 375,
    "accent": false,
+   "brk": true,
+   "to": 402
+  },
+  {
+   "text": "что",
+   "from": 402,
+   "accent": false,
+   "brk": false,
+   "to": 409
+  },
+  {
+   "text": "не",
+   "from": 409,
+   "accent": false,
+   "brk": false,
+   "to": 419
+  },
+  {
+   "text": "способен",
+   "from": 419,
+   "accent": false,
+   "brk": false,
+   "to": 433
+  },
+  {
+   "text": "даже",
+   "from": 433,
+   "accent": false,
+   "brk": false,
    "to": 445
   },
   {
-   "text": "что",
-   "from": 458,
-   "accent": false,
-   "to": 465
-  },
-  {
-   "text": "не",
-   "from": 465,
-   "accent": false,
-   "to": 475
-  },
-  {
-   "text": "способен",
-   "from": 475,
-   "accent": false,
-   "to": 489
-  },
-  {
-   "text": "даже",
-   "from": 489,
-   "accent": false,
-   "to": 501
-  },
-  {
    "text": "без",
-   "from": 501,
+   "from": 445,
    "accent": false,
-   "to": 511
+   "brk": false,
+   "to": 455
   },
   {
    "text": "тз",
-   "from": 511,
+   "from": 455,
    "accent": false,
-   "to": 523
+   "brk": false,
+   "to": 467
   },
   {
    "text": "своей",
-   "from": 523,
+   "from": 467,
    "accent": false,
-   "to": 535
+   "brk": false,
+   "to": 479
   },
   {
    "text": "жены",
-   "from": 535,
+   "from": 479,
    "accent": false,
-   "to": 544
+   "brk": false,
+   "to": 488
   },
   {
    "text": "пойти",
-   "from": 544,
+   "from": 488,
    "accent": false,
-   "to": 556
+   "brk": false,
+   "to": 500
   },
   {
    "text": "и",
-   "from": 556,
+   "from": 500,
    "accent": false,
-   "to": 564
+   "brk": false,
+   "to": 508
   },
   {
    "text": "рассказать",
-   "from": 564,
+   "from": 508,
    "accent": false,
-   "to": 578
+   "brk": false,
+   "to": 522
   },
   {
    "text": "определенные",
-   "from": 578,
+   "from": 522,
    "accent": false,
-   "to": 597
+   "brk": false,
+   "to": 541
   },
   {
    "text": "вещи",
-   "from": 597,
+   "from": 541,
    "accent": false,
-   "to": 607
+   "brk": false,
+   "to": 551
   },
   {
    "text": "врачу",
-   "from": 607,
+   "from": 551,
    "accent": false,
-   "to": 633
+   "brk": true,
+   "to": 564
   },
   {
    "text": "банальные",
-   "from": 633,
+   "from": 564,
    "accent": false,
-   "to": 650
+   "brk": false,
+   "to": 581
   },
   {
    "text": "вещи",
-   "from": 650,
+   "from": 581,
    "accent": false,
-   "to": 695
+   "brk": true,
+   "to": 593
   },
   {
    "text": "но",
-   "from": 746,
+   "from": 593,
    "accent": false,
-   "to": 756
+   "brk": false,
+   "to": 603
   },
   {
    "text": "если",
-   "from": 756,
+   "from": 603,
    "accent": false,
-   "to": 768
+   "brk": false,
+   "to": 615
   },
   {
    "text": "мы",
-   "from": 768,
+   "from": 615,
    "accent": false,
-   "to": 772
+   "brk": false,
+   "to": 620
   },
   {
    "text": "попытаемся",
-   "from": 772,
+   "from": 620,
    "accent": false,
-   "to": 792
+   "brk": false,
+   "to": 639
   },
   {
    "text": "не",
-   "from": 792,
+   "from": 639,
    "accent": false,
-   "to": 801
+   "brk": false,
+   "to": 649
   },
   {
    "text": "осудить",
-   "from": 801,
+   "from": 649,
    "accent": false,
-   "to": 818
+   "brk": false,
+   "to": 665
   },
   {
    "text": "этого",
-   "from": 818,
+   "from": 665,
    "accent": false,
-   "to": 830
+   "brk": false,
+   "to": 677
   },
   {
    "text": "человека",
-   "from": 830,
+   "from": 677,
    "accent": false,
-   "to": 847
+   "brk": true,
+   "to": 694
   },
   {
    "text": "а",
-   "from": 847,
+   "from": 694,
    "accent": false,
-   "to": 856
+   "brk": false,
+   "to": 704
   },
   {
    "text": "понять",
-   "from": 856,
+   "from": 704,
    "accent": false,
-   "to": 878
+   "brk": true,
+   "to": 725
   },
   {
    "text": "а",
-   "from": 878,
+   "from": 725,
    "accent": false,
-   "to": 888
+   "brk": false,
+   "to": 735
   },
   {
    "text": "следом",
-   "from": 888,
+   "from": 735,
    "accent": false,
-   "to": 900
+   "brk": false,
+   "to": 747
   },
   {
    "text": "даже",
-   "from": 900,
+   "from": 747,
    "accent": false,
-   "to": 912
+   "brk": false,
+   "to": 759
   },
   {
    "text": "позволить",
-   "from": 912,
+   "from": 759,
    "accent": false,
-   "to": 933
+   "brk": false,
+   "to": 781
   },
   {
    "text": "себе",
-   "from": 933,
+   "from": 781,
    "accent": false,
-   "to": 945
+   "brk": false,
+   "to": 793
   },
   {
    "text": "то",
-   "from": 945,
+   "from": 793,
    "accent": false,
-   "to": 952
+   "brk": true,
+   "to": 800
   },
   {
    "text": "что",
-   "from": 952,
+   "from": 800,
    "accent": false,
-   "to": 960
+   "brk": false,
+   "to": 807
   },
   {
    "text": "делает",
-   "from": 960,
+   "from": 807,
    "accent": false,
-   "to": 972
+   "brk": false,
+   "to": 819
   },
   {
    "text": "он",
-   "from": 972,
+   "from": 819,
    "accent": false,
-   "to": 986
+   "brk": true,
+   "to": 833
   },
   {
    "text": "нам",
-   "from": 986,
+   "from": 833,
    "accent": false,
-   "to": 991
+   "brk": false,
+   "to": 838
   },
   {
    "text": "с",
-   "from": 991,
+   "from": 838,
    "accent": false,
-   "to": 993
+   "brk": false,
+   "to": 841
   },
   {
    "text": "вами",
-   "from": 993,
+   "from": 841,
    "accent": false,
-   "to": 1000
+   "brk": false,
+   "to": 848
   },
   {
    "text": "правда",
-   "from": 1000,
+   "from": 848,
    "accent": false,
-   "to": 1010
+   "brk": false,
+   "to": 857
   },
   {
    "text": "станет",
-   "from": 1010,
+   "from": 857,
    "accent": false,
-   "to": 1024
+   "brk": false,
+   "to": 872
   },
   {
    "text": "очень",
-   "from": 1024,
+   "from": 872,
    "accent": false,
-   "to": 1032
+   "brk": false,
+   "to": 879
   },
   {
    "text": "легче",
-   "from": 1032,
+   "from": 879,
    "accent": false,
-   "to": 1044
+   "brk": false,
+   "to": 891
   },
   {
    "text": "жить",
-   "from": 1044,
+   "from": 891,
    "accent": false,
-   "to": 1063
+   "brk": true,
+   "to": 900
   },
   {
    "text": "почему",
-   "from": 1063,
+   "from": 900,
    "accent": false,
-   "to": 1077
+   "brk": true,
+   "to": 914
   },
   {
    "text": "например",
-   "from": 1077,
+   "from": 914,
    "accent": false,
-   "to": 1089
+   "brk": true,
+   "to": 926
   },
   {
    "text": "он",
-   "from": 1089,
+   "from": 926,
    "accent": false,
-   "to": 1099
+   "brk": false,
+   "to": 936
   },
   {
    "text": "так",
-   "from": 1099,
+   "from": 936,
    "accent": false,
-   "to": 1106
+   "brk": false,
+   "to": 943
   },
   {
    "text": "сделал",
-   "from": 1106,
+   "from": 943,
    "accent": false,
-   "to": 1151
+   "brk": true,
+   "to": 958
   },
   {
    "text": "вряд",
-   "from": 1168,
+   "from": 958,
    "accent": false,
-   "to": 1180
+   "brk": false,
+   "to": 968
   },
   {
    "text": "ли",
-   "from": 1180,
+   "from": 968,
    "accent": false,
-   "to": 1185
+   "brk": false,
+   "to": 973
   },
   {
    "text": "потому",
-   "from": 1185,
+   "from": 973,
    "accent": false,
-   "to": 1200
+   "brk": true,
+   "to": 988
   },
   {
    "text": "что",
-   "from": 1200,
+   "from": 988,
    "accent": false,
-   "to": 1202
+   "brk": false,
+   "to": 990
   },
   {
    "text": "он",
-   "from": 1202,
+   "from": 990,
    "accent": false,
-   "to": 1212
+   "brk": false,
+   "to": 1000
   },
   {
    "text": "не",
-   "from": 1212,
+   "from": 1000,
    "accent": false,
-   "to": 1216
+   "brk": false,
+   "to": 1004
   },
   {
    "text": "в",
-   "from": 1216,
+   "from": 1004,
    "accent": false,
-   "to": 1221
+   "brk": false,
+   "to": 1009
   },
   {
    "text": "адеквате",
-   "from": 1221,
+   "from": 1009,
    "accent": false,
-   "to": 1240
+   "brk": false,
+   "to": 1028
   },
   {
    "text": "и",
-   "from": 1240,
+   "from": 1028,
    "accent": false,
-   "to": 1248
+   "brk": false,
+   "to": 1036
   },
   {
    "text": "не",
-   "from": 1248,
+   "from": 1036,
    "accent": false,
-   "to": 1252
+   "brk": false,
+   "to": 1040
   },
   {
    "text": "способен",
-   "from": 1252,
+   "from": 1040,
    "accent": false,
-   "to": 1267
+   "brk": false,
+   "to": 1055
   },
   {
    "text": "составить",
-   "from": 1267,
+   "from": 1055,
    "accent": false,
-   "to": 1284
+   "brk": false,
+   "to": 1072
   },
   {
    "text": "предложения",
-   "from": 1284,
+   "from": 1072,
    "accent": false,
-   "to": 1320
+   "brk": true,
+   "to": 1097
   },
   {
    "text": "вряд",
-   "from": 1320,
+   "from": 1097,
    "accent": false,
-   "to": 1334
+   "brk": false,
+   "to": 1110
   },
   {
    "text": "ли",
-   "from": 1334,
+   "from": 1110,
    "accent": false,
-   "to": 1339
+   "brk": false,
+   "to": 1114
   },
   {
    "text": "потому",
-   "from": 1339,
+   "from": 1114,
    "accent": false,
-   "to": 1348
+   "brk": true,
+   "to": 1124
   },
   {
    "text": "что",
-   "from": 1348,
+   "from": 1124,
    "accent": false,
-   "to": 1353
+   "brk": false,
+   "to": 1129
   },
   {
    "text": "он",
-   "from": 1353,
+   "from": 1129,
    "accent": false,
-   "to": 1356
+   "brk": false,
+   "to": 1131
   },
   {
    "text": "не",
-   "from": 1356,
+   "from": 1131,
    "accent": false,
-   "to": 1360
+   "brk": false,
+   "to": 1136
   },
   {
    "text": "смог",
-   "from": 1360,
+   "from": 1136,
    "accent": false,
-   "to": 1368
+   "brk": false,
+   "to": 1143
   },
   {
    "text": "бы",
-   "from": 1368,
+   "from": 1143,
    "accent": false,
-   "to": 1372
+   "brk": false,
+   "to": 1148
   },
   {
    "text": "разобраться",
-   "from": 1372,
+   "from": 1148,
    "accent": false,
-   "to": 1387
+   "brk": false,
+   "to": 1162
   },
   {
    "text": "с",
-   "from": 1387,
+   "from": 1162,
    "accent": false,
-   "to": 1396
+   "brk": false,
+   "to": 1172
   },
   {
    "text": "тем",
-   "from": 1396,
+   "from": 1172,
    "accent": false,
-   "to": 1404
+   "brk": true,
+   "to": 1179
   },
   {
    "text": "что",
-   "from": 1404,
+   "from": 1179,
    "accent": false,
-   "to": 1406
+   "brk": false,
+   "to": 1182
   },
   {
    "text": "ему",
-   "from": 1406,
+   "from": 1182,
    "accent": false,
-   "to": 1416
+   "brk": false,
+   "to": 1191
   },
   {
    "text": "нужно",
-   "from": 1416,
+   "from": 1191,
    "accent": false,
-   "to": 1461
+   "brk": true,
+   "to": 1203
   },
   {
    "text": "но",
-   "from": 1461,
+   "from": 1203,
    "accent": false,
-   "to": 1471
+   "brk": false,
+   "to": 1212
   },
   {
    "text": "он",
-   "from": 1471,
+   "from": 1212,
    "accent": false,
-   "to": 1483
+   "brk": false,
+   "to": 1224
   },
   {
    "text": "делегировал",
-   "from": 1483,
+   "from": 1224,
    "accent": true,
-   "to": 1507
+   "brk": false,
+   "to": 1248
   },
   {
    "text": "эту",
-   "from": 1507,
+   "from": 1248,
    "accent": false,
-   "to": 1516
+   "brk": false,
+   "to": 1258
   },
   {
    "text": "задачу",
-   "from": 1516,
+   "from": 1258,
    "accent": false,
-   "to": 1531
+   "brk": false,
+   "to": 1272
   },
   {
    "text": "на",
-   "from": 1531,
+   "from": 1272,
    "accent": false,
-   "to": 1535
+   "brk": false,
+   "to": 1277
   },
   {
    "text": "свою",
-   "from": 1535,
+   "from": 1277,
    "accent": false,
-   "to": 1545
+   "brk": false,
+   "to": 1287
   },
   {
    "text": "жену",
-   "from": 1545,
+   "from": 1287,
    "accent": false,
-   "to": 1590
+   "brk": true,
+   "to": 1296
   },
   {
    "text": "например",
-   "from": 1610,
+   "from": 1296,
    "accent": false,
-   "to": 1624
+   "brk": true,
+   "to": 1311
   },
   {
    "text": "он",
-   "from": 1624,
+   "from": 1311,
    "accent": false,
-   "to": 1634
+   "brk": false,
+   "to": 1320
   },
   {
    "text": "там",
-   "from": 1634,
+   "from": 1320,
    "accent": false,
-   "to": 1641
+   "brk": false,
+   "to": 1327
   },
   {
    "text": "был",
-   "from": 1641,
+   "from": 1327,
    "accent": false,
-   "to": 1646
+   "brk": false,
+   "to": 1332
   },
   {
    "text": "в",
-   "from": 1646,
+   "from": 1332,
    "accent": false,
-   "to": 1651
+   "brk": false,
+   "to": 1337
   },
   {
    "text": "работе",
-   "from": 1651,
+   "from": 1337,
    "accent": false,
-   "to": 1660
+   "brk": true,
+   "to": 1347
   },
   {
    "text": "в",
-   "from": 1660,
+   "from": 1347,
    "accent": false,
-   "to": 1665
+   "brk": false,
+   "to": 1351
   },
   {
    "text": "своих",
-   "from": 1665,
+   "from": 1351,
    "accent": false,
-   "to": 1672
+   "brk": false,
+   "to": 1359
   },
   {
    "text": "рабочих",
-   "from": 1672,
+   "from": 1359,
    "accent": false,
-   "to": 1684
+   "brk": false,
+   "to": 1371
   },
   {
    "text": "задачах",
-   "from": 1684,
+   "from": 1371,
    "accent": false,
-   "to": 1703
+   "brk": true,
+   "to": 1390
   },
   {
    "text": "чтобы",
-   "from": 1703,
+   "from": 1390,
    "accent": false,
-   "to": 1711
+   "brk": false,
+   "to": 1397
   },
   {
    "text": "не",
-   "from": 1711,
+   "from": 1397,
    "accent": false,
-   "to": 1715
+   "brk": false,
+   "to": 1402
   },
   {
    "text": "загружать",
-   "from": 1715,
+   "from": 1402,
    "accent": false,
-   "to": 1730
+   "brk": false,
+   "to": 1416
   },
   {
    "text": "свой",
-   "from": 1730,
+   "from": 1416,
    "accent": false,
-   "to": 1742
+   "brk": false,
+   "to": 1428
   },
   {
    "text": "мозг",
-   "from": 1742,
+   "from": 1428,
    "accent": false,
-   "to": 1754
+   "brk": false,
+   "to": 1440
   },
   {
    "text": "другой",
-   "from": 1754,
+   "from": 1440,
    "accent": false,
-   "to": 1766
+   "brk": false,
+   "to": 1452
   },
   {
    "text": "информацией",
-   "from": 1766,
+   "from": 1452,
    "accent": false,
-   "to": 1792
+   "brk": true,
+   "to": 1478
   },
   {
    "text": "она",
-   "from": 1792,
+   "from": 1478,
    "accent": false,
-   "to": 1794
-  },
-  {
-   "text": "она",
-   "from": 1793,
-   "accent": false,
-   "to": 1802
+   "brk": false,
+   "to": 1488
   },
   {
    "text": "ему",
-   "from": 1802,
+   "from": 1488,
    "accent": false,
-   "to": 1810
+   "brk": false,
+   "to": 1495
   },
   {
    "text": "так",
-   "from": 1810,
+   "from": 1495,
    "accent": false,
-   "to": 1817
+   "brk": false,
+   "to": 1502
   },
   {
    "text": "и",
-   "from": 1817,
+   "from": 1502,
    "accent": false,
-   "to": 1822
+   "brk": false,
+   "to": 1507
   },
   {
    "text": "написала",
-   "from": 1822,
+   "from": 1507,
    "accent": false,
-   "to": 1838
+   "brk": true,
+   "to": 1524
   },
   {
    "text": "идешь",
-   "from": 1838,
+   "from": 1524,
    "accent": false,
-   "to": 1848
+   "brk": false,
+   "to": 1533
   },
   {
    "text": "в",
-   "from": 1848,
+   "from": 1533,
    "accent": false,
-   "to": 1853
+   "brk": false,
+   "to": 1538
   },
   {
    "text": "поликлинику",
-   "from": 1853,
+   "from": 1538,
    "accent": false,
-   "to": 1872
+   "brk": true,
+   "to": 1557
   },
   {
    "text": "говоришь",
-   "from": 1872,
+   "from": 1557,
    "accent": false,
-   "to": 1882
+   "brk": false,
+   "to": 1567
   },
   {
    "text": "эти",
-   "from": 1882,
+   "from": 1567,
    "accent": false,
-   "to": 1891
+   "brk": false,
+   "to": 1577
   },
   {
    "text": "вещи",
-   "from": 1891,
+   "from": 1577,
    "accent": false,
-   "to": 1898
+   "brk": true,
+   "to": 1584
   },
   {
    "text": "ребенок",
-   "from": 1898,
+   "from": 1584,
    "accent": false,
-   "to": 1920
+   "brk": true,
+   "to": 1605
   },
   {
    "text": "вот",
-   "from": 1920,
+   "from": 1605,
    "accent": false,
-   "to": 1927
+   "brk": false,
+   "to": 1613
   },
   {
    "text": "время",
-   "from": 1927,
+   "from": 1613,
    "accent": false,
-   "to": 1934
+   "brk": true,
+   "to": 1620
   },
   {
    "text": "которому",
-   "from": 1934,
+   "from": 1620,
    "accent": false,
-   "to": 1949
+   "brk": false,
+   "to": 1634
   },
   {
    "text": "нужно",
-   "from": 1949,
+   "from": 1634,
    "accent": false,
-   "to": 1958
+   "brk": false,
+   "to": 1644
   },
   {
    "text": "прийти",
-   "from": 1958,
+   "from": 1644,
    "accent": false,
-   "to": 1973
-  },
-  {
-   "text": "вот",
-   "from": 1973,
-   "accent": false,
-   "to": 1975
+   "brk": true,
+   "to": 1654
   },
   {
    "text": "то",
-   "from": 1973,
+   "from": 1654,
    "accent": false,
-   "to": 1978
+   "brk": false,
+   "to": 1658
   },
   {
    "text": "есть",
-   "from": 1978,
+   "from": 1658,
    "accent": false,
-   "to": 1983
+   "brk": false,
+   "to": 1663
   },
   {
    "text": "они",
-   "from": 1983,
+   "from": 1663,
    "accent": false,
-   "to": 1990
+   "brk": false,
+   "to": 1670
   },
   {
    "text": "что",
-   "from": 1990,
+   "from": 1670,
    "accent": false,
-   "to": 1995
+   "brk": false,
+   "to": 1675
   },
   {
    "text": "сделали",
-   "from": 1995,
+   "from": 1675,
    "accent": false,
-   "to": 2011
+   "brk": true,
+   "to": 1692
   },
   {
    "text": "они",
-   "from": 2011,
+   "from": 1692,
    "accent": false,
-   "to": 2021
+   "brk": false,
+   "to": 1702
   },
   {
    "text": "разделили",
-   "from": 2021,
+   "from": 1702,
    "accent": true,
-   "to": 2043
+   "brk": false,
+   "to": 1723
   },
   {
    "text": "обязанности",
-   "from": 2043,
+   "from": 1723,
    "accent": false,
-   "to": 2088
+   "brk": true,
+   "to": 1751
   },
   {
    "text": "именно",
-   "from": 2091,
+   "from": 1751,
    "accent": false,
-   "to": 2103
+   "brk": false,
+   "to": 1763
   },
   {
    "text": "для",
-   "from": 2103,
+   "from": 1763,
    "accent": false,
-   "to": 2112
+   "brk": false,
+   "to": 1773
   },
   {
    "text": "этого",
-   "from": 2112,
+   "from": 1773,
    "accent": false,
-   "to": 2122
+   "brk": false,
+   "to": 1782
   },
   {
    "text": "мы",
-   "from": 2122,
+   "from": 1782,
    "accent": false,
-   "to": 2131
+   "brk": false,
+   "to": 1792
   },
   {
    "text": "живем",
-   "from": 2131,
+   "from": 1792,
    "accent": false,
-   "to": 2148
+   "brk": false,
+   "to": 1809
   },
   {
    "text": "вместе",
-   "from": 2148,
+   "from": 1809,
    "accent": false,
-   "to": 2184
+   "brk": true,
+   "to": 1832
   },
   {
    "text": "то",
-   "from": 2184,
+   "from": 1832,
    "accent": false,
-   "to": 2194
+   "brk": false,
+   "to": 1839
   },
   {
    "text": "же",
-   "from": 2194,
+   "from": 1839,
    "accent": false,
-   "to": 2199
+   "brk": false,
+   "to": 1844
   },
   {
    "text": "самое",
-   "from": 2199,
+   "from": 1844,
    "accent": false,
-   "to": 2213
+   "brk": true,
+   "to": 1858
   },
   {
    "text": "например",
-   "from": 2213,
+   "from": 1858,
    "accent": false,
-   "to": 2225
+   "brk": true,
+   "to": 1870
   },
   {
    "text": "когда",
-   "from": 2225,
+   "from": 1870,
    "accent": false,
-   "to": 2237
+   "brk": false,
+   "to": 1882
   },
   {
    "text": "у",
-   "from": 2237,
+   "from": 1882,
    "accent": false,
-   "to": 2247
+   "brk": false,
+   "to": 1892
   },
   {
    "text": "меня",
-   "from": 2247,
+   "from": 1892,
    "accent": false,
-   "to": 2251
+   "brk": false,
+   "to": 1897
   },
   {
    "text": "течет",
-   "from": 2251,
+   "from": 1897,
    "accent": false,
-   "to": 2266
+   "brk": false,
+   "to": 1911
   },
   {
    "text": "кран",
-   "from": 2266,
+   "from": 1911,
    "accent": false,
-   "to": 2278
+   "brk": true,
+   "to": 1923
   },
   {
    "text": "я",
-   "from": 2278,
+   "from": 1923,
    "accent": false,
-   "to": 2280
+   "brk": false,
+   "to": 1926
   },
   {
    "text": "с",
-   "from": 2280,
+   "from": 1926,
    "accent": false,
-   "to": 2285
+   "brk": false,
+   "to": 1930
   },
   {
    "text": "этим",
-   "from": 2285,
+   "from": 1930,
    "accent": false,
-   "to": 2290
+   "brk": false,
+   "to": 1935
   },
   {
    "text": "ничего",
-   "from": 2290,
+   "from": 1935,
    "accent": false,
-   "to": 2302
+   "brk": false,
+   "to": 1947
   },
   {
    "text": "не",
-   "from": 2302,
+   "from": 1947,
    "accent": false,
-   "to": 2309
+   "brk": false,
+   "to": 1954
   },
   {
    "text": "делаю",
-   "from": 2309,
+   "from": 1954,
    "accent": false,
-   "to": 2328
+   "brk": true,
+   "to": 1974
   },
   {
    "text": "я",
-   "from": 2328,
+   "from": 1974,
    "accent": false,
-   "to": 2333
+   "brk": false,
+   "to": 1978
   },
   {
    "text": "подхожу",
-   "from": 2333,
+   "from": 1978,
    "accent": false,
-   "to": 2345
+   "brk": false,
+   "to": 1990
   },
   {
    "text": "и",
-   "from": 2345,
+   "from": 1990,
    "accent": false,
-   "to": 2352
+   "brk": false,
+   "to": 1998
   },
   {
    "text": "говорю",
-   "from": 2352,
+   "from": 1998,
    "accent": false,
-   "to": 2362
+   "brk": true,
+   "to": 2007
   },
   {
    "text": "вот",
-   "from": 2362,
+   "from": 2007,
    "accent": false,
-   "to": 2369
+   "brk": false,
+   "to": 2014
   },
   {
    "text": "кран",
-   "from": 2369,
+   "from": 2014,
    "accent": false,
-   "to": 2383
+   "brk": true,
+   "to": 2029
   },
   {
    "text": "течет",
-   "from": 2383,
+   "from": 2029,
    "accent": false,
-   "to": 2391
+   "brk": false,
+   "to": 2036
   },
   {
    "text": "вода",
-   "from": 2391,
+   "from": 2036,
    "accent": false,
-   "to": 2403
+   "brk": true,
+   "to": 2048
   },
   {
    "text": "течь",
-   "from": 2403,
+   "from": 2048,
    "accent": false,
-   "to": 2412
+   "brk": false,
+   "to": 2058
   },
   {
    "text": "не",
-   "from": 2412,
+   "from": 2058,
    "accent": false,
-   "to": 2417
+   "brk": false,
+   "to": 2062
   },
   {
    "text": "должна",
-   "from": 2417,
+   "from": 2062,
    "accent": false,
-   "to": 2431
+   "brk": true,
+   "to": 2077
   },
   {
    "text": "разберись",
-   "from": 2431,
+   "from": 2077,
    "accent": false,
-   "to": 2455
+   "brk": true,
+   "to": 2093
   },
   {
    "text": "не",
-   "from": 2455,
+   "from": 2093,
    "accent": false,
-   "to": 2463
+   "brk": false,
+   "to": 2100
   },
   {
    "text": "потому",
-   "from": 2463,
+   "from": 2100,
    "accent": false,
-   "to": 2467
+   "brk": false,
+   "to": 2105
   },
   {
    "text": "что",
-   "from": 2467,
+   "from": 2105,
    "accent": false,
-   "to": 2472
+   "brk": false,
+   "to": 2110
   },
   {
    "text": "я",
-   "from": 2472,
+   "from": 2110,
    "accent": false,
-   "to": 2477
+   "brk": false,
+   "to": 2114
   },
   {
    "text": "тупая",
-   "from": 2477,
+   "from": 2114,
    "accent": false,
-   "to": 2491
+   "brk": true,
+   "to": 2129
   },
   {
    "text": "не",
-   "from": 2491,
+   "from": 2129,
    "accent": false,
-   "to": 2499
+   "brk": false,
+   "to": 2136
   },
   {
    "text": "потому",
-   "from": 2499,
+   "from": 2136,
    "accent": false,
-   "to": 2503
+   "brk": false,
+   "to": 2141
   },
   {
    "text": "что",
-   "from": 2503,
+   "from": 2141,
    "accent": false,
-   "to": 2508
+   "brk": false,
+   "to": 2146
   },
   {
    "text": "я",
-   "from": 2508,
+   "from": 2146,
    "accent": false,
-   "to": 2513
+   "brk": false,
+   "to": 2150
   },
   {
    "text": "бытовая",
-   "from": 2513,
+   "from": 2150,
    "accent": false,
-   "to": 2525
+   "brk": false,
+   "to": 2162
   },
   {
    "text": "инвалидка",
-   "from": 2525,
+   "from": 2162,
    "accent": false,
-   "to": 2542
+   "brk": true,
+   "to": 2179
   },
   {
    "text": "просто",
-   "from": 2542,
+   "from": 2179,
    "accent": false,
-   "to": 2549
+   "brk": false,
+   "to": 2186
   },
   {
    "text": "потому",
-   "from": 2549,
+   "from": 2186,
    "accent": false,
-   "to": 2556
+   "brk": false,
+   "to": 2194
   },
   {
    "text": "что",
-   "from": 2556,
+   "from": 2194,
    "accent": false,
-   "to": 2561
+   "brk": false,
+   "to": 2198
   },
   {
    "text": "у",
-   "from": 2561,
+   "from": 2198,
    "accent": false,
-   "to": 2566
+   "brk": false,
+   "to": 2203
   },
   {
    "text": "меня",
-   "from": 2566,
+   "from": 2203,
    "accent": false,
-   "to": 2568
+   "brk": false,
+   "to": 2206
   },
   {
    "text": "много",
-   "from": 2568,
+   "from": 2206,
    "accent": false,
-   "to": 2575
+   "brk": false,
+   "to": 2213
   },
   {
    "text": "других",
-   "from": 2575,
+   "from": 2213,
    "accent": false,
-   "to": 2585
+   "brk": false,
+   "to": 2222
   },
   {
    "text": "дел",
-   "from": 2585,
+   "from": 2222,
    "accent": false,
-   "to": 2595
+   "brk": true,
+   "to": 2232
   },
   {
    "text": "и",
-   "from": 2595,
+   "from": 2232,
    "accent": false,
-   "to": 2599
+   "brk": false,
+   "to": 2237
   },
   {
    "text": "этим",
-   "from": 2599,
+   "from": 2237,
    "accent": false,
-   "to": 2609
+   "brk": false,
+   "to": 2246
   },
   {
    "text": "конкретно",
-   "from": 2609,
+   "from": 2246,
    "accent": false,
-   "to": 2623
+   "brk": false,
+   "to": 2261
   },
   {
    "text": "делом",
-   "from": 2623,
+   "from": 2261,
    "accent": false,
-   "to": 2638
+   "brk": false,
+   "to": 2275
   },
   {
    "text": "я",
-   "from": 2638,
+   "from": 2275,
    "accent": false,
-   "to": 2643
+   "brk": false,
+   "to": 2280
   },
   {
    "text": "заниматься",
-   "from": 2643,
+   "from": 2280,
    "accent": false,
-   "to": 2659
+   "brk": false,
+   "to": 2297
   },
   {
    "text": "не",
-   "from": 2659,
+   "from": 2297,
    "accent": false,
-   "to": 2667
+   "brk": false,
+   "to": 2304
   },
   {
    "text": "хочу",
-   "from": 2667,
+   "from": 2304,
    "accent": false,
-   "to": 2683
+   "brk": true,
+   "to": 2321
   },
   {
    "text": "я",
-   "from": 2683,
+   "from": 2321,
    "accent": false,
-   "to": 2688
+   "brk": false,
+   "to": 2326
   },
   {
    "text": "его",
-   "from": 2688,
+   "from": 2326,
    "accent": false,
-   "to": 2695
+   "brk": false,
+   "to": 2333
   },
   {
    "text": "делегирую",
-   "from": 2695,
+   "from": 2333,
    "accent": true,
-   "to": 2736
+   "brk": true,
+   "to": 2355
   },
   {
    "text": "когда",
-   "from": 2736,
+   "from": 2355,
    "accent": false,
-   "to": 2746
+   "brk": false,
+   "to": 2364
   },
   {
    "text": "приходят",
-   "from": 2746,
+   "from": 2364,
    "accent": false,
-   "to": 2760
+   "brk": false,
+   "to": 2379
   },
   {
    "text": "какие-то",
-   "from": 2760,
+   "from": 2379,
    "accent": false,
-   "to": 2775
+   "brk": false,
+   "to": 2393
   },
   {
    "text": "люди",
-   "from": 2775,
+   "from": 2393,
    "accent": false,
-   "to": 2789
+   "brk": true,
+   "to": 2408
   },
   {
    "text": "которые",
-   "from": 2789,
+   "from": 2408,
    "accent": false,
-   "to": 2806
+   "brk": true,
+   "to": 2424
   },
   {
    "text": "например",
-   "from": 2806,
+   "from": 2424,
    "accent": false,
-   "to": 2815
+   "brk": true,
+   "to": 2434
   },
   {
    "text": "устанавливают",
-   "from": 2815,
+   "from": 2434,
    "accent": false,
-   "to": 2835
+   "brk": false,
+   "to": 2453
   },
   {
    "text": "что-то",
-   "from": 2835,
+   "from": 2453,
    "accent": false,
-   "to": 2849
+   "brk": false,
+   "to": 2468
   },
   {
    "text": "в",
-   "from": 2849,
+   "from": 2468,
    "accent": false,
-   "to": 2854
+   "brk": false,
+   "to": 2472
   },
   {
    "text": "доме",
-   "from": 2854,
+   "from": 2472,
    "accent": false,
-   "to": 2866
+   "brk": false,
+   "to": 2485
   },
   {
    "text": "и",
-   "from": 2866,
+   "from": 2485,
    "accent": false,
-   "to": 2871
+   "brk": false,
+   "to": 2489
   },
   {
    "text": "задают",
-   "from": 2871,
+   "from": 2489,
    "accent": false,
-   "to": 2880
+   "brk": false,
+   "to": 2499
   },
   {
    "text": "мне",
-   "from": 2880,
+   "from": 2499,
    "accent": false,
-   "to": 2887
+   "brk": false,
+   "to": 2506
   },
   {
    "text": "какие-то",
-   "from": 2887,
+   "from": 2506,
    "accent": false,
-   "to": 2897
+   "brk": false,
+   "to": 2516
   },
   {
    "text": "бытовые",
-   "from": 2897,
+   "from": 2516,
    "accent": false,
-   "to": 2916
+   "brk": false,
+   "to": 2535
   },
   {
    "text": "вопросы",
-   "from": 2916,
+   "from": 2535,
    "accent": false,
-   "to": 2928
+   "brk": true,
+   "to": 2547
   },
   {
    "text": "я",
-   "from": 2928,
+   "from": 2547,
    "accent": false,
-   "to": 2938
+   "brk": false,
+   "to": 2557
   },
   {
    "text": "звоню",
-   "from": 2938,
+   "from": 2557,
    "accent": false,
-   "to": 2950
+   "brk": true,
+   "to": 2569
   },
   {
    "text": "говорю",
-   "from": 2950,
+   "from": 2569,
    "accent": false,
-   "to": 2964
+   "brk": true,
+   "to": 2576
   },
   {
    "text": "ответь",
-   "from": 2964,
+   "from": 2576,
    "accent": false,
-   "to": 2991
+   "brk": true,
+   "to": 2589
   },
   {
    "text": "не",
-   "from": 2991,
+   "from": 2589,
    "accent": false,
-   "to": 2998
+   "brk": false,
+   "to": 2594
   },
   {
    "text": "потому",
-   "from": 2998,
+   "from": 2594,
    "accent": false,
-   "to": 3003
+   "brk": false,
+   "to": 2599
   },
   {
    "text": "что",
-   "from": 3003,
+   "from": 2599,
    "accent": false,
-   "to": 3005
+   "brk": false,
+   "to": 2601
   },
   {
    "text": "я",
-   "from": 3005,
+   "from": 2601,
    "accent": false,
-   "to": 3010
+   "brk": false,
+   "to": 2606
   },
   {
    "text": "тупая",
-   "from": 3010,
+   "from": 2606,
    "accent": false,
-   "to": 3055
+   "brk": true,
+   "to": 2619
   },
   {
    "text": "не",
-   "from": 3075,
+   "from": 2619,
    "accent": false,
-   "to": 3082
+   "brk": false,
+   "to": 2624
   },
   {
    "text": "потому",
-   "from": 3082,
+   "from": 2624,
    "accent": false,
-   "to": 3089
+   "brk": false,
+   "to": 2631
   },
   {
    "text": "что",
-   "from": 3089,
+   "from": 2631,
    "accent": false,
-   "to": 3094
+   "brk": false,
+   "to": 2636
   },
   {
    "text": "у",
-   "from": 3094,
+   "from": 2636,
    "accent": false,
-   "to": 3099
+   "brk": false,
+   "to": 2641
   },
   {
    "text": "меня",
-   "from": 3099,
+   "from": 2641,
    "accent": false,
-   "to": 3103
+   "brk": false,
+   "to": 2646
   },
   {
    "text": "не",
-   "from": 3103,
+   "from": 2646,
    "accent": false,
-   "to": 3108
+   "brk": false,
+   "to": 2650
   },
   {
    "text": "хватает",
-   "from": 3108,
+   "from": 2650,
    "accent": false,
-   "to": 3118
+   "brk": false,
+   "to": 2660
   },
   {
    "text": "когнитивных",
-   "from": 3118,
+   "from": 2660,
    "accent": false,
-   "to": 3139
+   "brk": false,
+   "to": 2682
   },
   {
    "text": "способностей",
-   "from": 3139,
+   "from": 2682,
    "accent": false,
-   "to": 3184
+   "brk": true,
+   "to": 2707
   },
   {
    "text": "просто",
-   "from": 3199,
+   "from": 2707,
    "accent": false,
-   "to": 3201
-  },
-  {
-   "text": "просто",
-   "from": 3201,
-   "accent": false,
-   "to": 3208
+   "brk": false,
+   "to": 2714
   },
   {
    "text": "я",
-   "from": 3208,
+   "from": 2714,
    "accent": false,
-   "to": 3215
+   "brk": false,
+   "to": 2721
   },
   {
    "text": "не",
-   "from": 3215,
+   "from": 2721,
    "accent": false,
-   "to": 3220
+   "brk": false,
+   "to": 2726
   },
   {
    "text": "хочу",
-   "from": 3220,
+   "from": 2726,
    "accent": false,
-   "to": 3227
+   "brk": false,
+   "to": 2733
   },
   {
    "text": "загружать",
-   "from": 3227,
+   "from": 2733,
    "accent": false,
-   "to": 3241
+   "brk": false,
+   "to": 2748
   },
   {
    "text": "свой",
-   "from": 3241,
+   "from": 2748,
    "accent": false,
-   "to": 3249
+   "brk": false,
+   "to": 2755
   },
   {
    "text": "мозг",
-   "from": 3249,
+   "from": 2755,
    "accent": false,
-   "to": 3256
+   "brk": false,
+   "to": 2762
   },
   {
    "text": "дополнительно",
-   "from": 3256,
+   "from": 2762,
    "accent": false,
-   "to": 3273
+   "brk": false,
+   "to": 2779
   },
   {
    "text": "информацией",
-   "from": 3273,
+   "from": 2779,
    "accent": false,
-   "to": 3297
+   "brk": true,
+   "to": 2803
   },
   {
    "text": "у",
-   "from": 3297,
+   "from": 2803,
    "accent": false,
-   "to": 3299
+   "brk": false,
+   "to": 2805
   },
   {
    "text": "меня",
-   "from": 3299,
+   "from": 2805,
    "accent": false,
-   "to": 3304
+   "brk": false,
+   "to": 2810
   },
   {
    "text": "много",
-   "from": 3304,
+   "from": 2810,
    "accent": false,
-   "to": 3313
+   "brk": false,
+   "to": 2820
   },
   {
    "text": "других",
-   "from": 3313,
+   "from": 2820,
    "accent": false,
-   "to": 3325
+   "brk": false,
+   "to": 2832
   },
   {
    "text": "задач",
-   "from": 3325,
+   "from": 2832,
    "accent": false,
-   "to": 3370
+   "brk": true,
+   "to": 2845
   },
   {
    "text": "и",
-   "from": 3690,
+   "from": 2845,
    "accent": false,
-   "to": 3698
+   "brk": false,
+   "to": 2849
   },
   {
    "text": "когда",
-   "from": 3698,
+   "from": 2849,
    "accent": false,
-   "to": 3707
+   "brk": false,
+   "to": 2858
   },
   {
    "text": "мы",
-   "from": 3707,
+   "from": 2858,
    "accent": false,
-   "to": 3712
+   "brk": false,
+   "to": 2863
   },
   {
    "text": "научимся",
-   "from": 3712,
+   "from": 2863,
    "accent": false,
-   "to": 3726
+   "brk": false,
+   "to": 2877
   },
   {
    "text": "таким",
-   "from": 3726,
+   "from": 2877,
    "accent": false,
-   "to": 3741
+   "brk": false,
+   "to": 2892
   },
   {
    "text": "образом",
-   "from": 3741,
+   "from": 2892,
    "accent": false,
-   "to": 3755
+   "brk": false,
+   "to": 2906
   },
   {
    "text": "смотреть",
-   "from": 3755,
+   "from": 2906,
    "accent": false,
-   "to": 3770
+   "brk": false,
+   "to": 2921
   },
   {
    "text": "на",
-   "from": 3770,
+   "from": 2921,
    "accent": false,
-   "to": 3777
+   "brk": false,
+   "to": 2928
   },
   {
    "text": "совместное",
-   "from": 3777,
+   "from": 2928,
    "accent": false,
-   "to": 3791
+   "brk": false,
+   "to": 2942
   },
   {
    "text": "проживание",
-   "from": 3791,
+   "from": 2942,
    "accent": false,
-   "to": 3836
+   "brk": true,
+   "to": 2966
   },
   {
    "text": "когда",
-   "from": 3854,
+   "from": 2966,
    "accent": false,
-   "to": 3866
+   "brk": false,
+   "to": 2975
   },
   {
    "text": "мы",
-   "from": 3866,
+   "from": 2975,
    "accent": false,
-   "to": 3870
+   "brk": false,
+   "to": 2980
   },
   {
    "text": "научимся",
-   "from": 3870,
+   "from": 2980,
    "accent": false,
-   "to": 3885
+   "brk": false,
+   "to": 2994
   },
   {
    "text": "таким",
-   "from": 3885,
+   "from": 2994,
    "accent": false,
-   "to": 3894
+   "brk": false,
+   "to": 3004
   },
   {
    "text": "образом",
-   "from": 3894,
+   "from": 3004,
    "accent": false,
-   "to": 3906
+   "brk": false,
+   "to": 3016
   },
   {
    "text": "смотреть",
-   "from": 3906,
+   "from": 3016,
    "accent": false,
-   "to": 3916
+   "brk": false,
+   "to": 3025
   },
   {
    "text": "на",
-   "from": 3916,
+   "from": 3025,
    "accent": false,
-   "to": 3923
+   "brk": false,
+   "to": 3032
   },
   {
    "text": "отношения",
-   "from": 3923,
+   "from": 3032,
    "accent": false,
-   "to": 3940
+   "brk": true,
+   "to": 3049
   },
   {
    "text": "нам",
-   "from": 3940,
+   "from": 3049,
    "accent": false,
-   "to": 3947
+   "brk": false,
+   "to": 3056
   },
   {
    "text": "станет",
-   "from": 3947,
+   "from": 3056,
    "accent": false,
-   "to": 3957
+   "brk": false,
+   "to": 3066
   },
   {
    "text": "легче",
-   "from": 3957,
+   "from": 3066,
    "accent": false,
-   "to": 3969
+   "brk": false,
+   "to": 3078
   },
   {
    "text": "их",
-   "from": 3969,
+   "from": 3078,
    "accent": false,
-   "to": 3978
+   "brk": false,
+   "to": 3088
   },
   {
    "text": "строить",
-   "from": 3978,
+   "from": 3088,
    "accent": false,
-   "to": 4012
+   "brk": true,
+   "to": 3101
   },
   {
    "text": "они",
-   "from": 4012,
+   "from": 3101,
    "accent": false,
-   "to": 4014
-  },
-  {
-   "text": "они",
-   "from": 4012,
-   "accent": false,
-   "to": 4022
+   "brk": false,
+   "to": 3110
   },
   {
    "text": "существуют",
-   "from": 4022,
+   "from": 3110,
    "accent": false,
-   "to": 4036
+   "brk": false,
+   "to": 3125
   },
   {
    "text": "для",
-   "from": 4036,
+   "from": 3125,
    "accent": false,
-   "to": 4043
+   "brk": false,
+   "to": 3132
   },
   {
    "text": "того",
-   "from": 4043,
+   "from": 3132,
    "accent": false,
-   "to": 4048
+   "brk": true,
+   "to": 3137
   },
   {
    "text": "чтобы",
-   "from": 4048,
+   "from": 3137,
    "accent": false,
-   "to": 4055
+   "brk": false,
+   "to": 3144
   },
   {
    "text": "обоим",
-   "from": 4055,
+   "from": 3144,
    "accent": false,
-   "to": 4070
+   "brk": false,
+   "to": 3158
   },
   {
    "text": "людям",
-   "from": 4070,
+   "from": 3158,
    "accent": false,
-   "to": 4079
+   "brk": false,
+   "to": 3168
   },
   {
    "text": "стало",
-   "from": 4079,
+   "from": 3168,
    "accent": false,
-   "to": 4091
+   "brk": false,
+   "to": 3180
   },
   {
    "text": "легче",
-   "from": 4091,
+   "from": 3180,
    "accent": false,
-   "to": 4125
+   "brk": true,
+   "to": 3199
   },
   {
    "text": "соответственно",
-   "from": 4125,
+   "from": 3199,
    "accent": false,
-   "to": 4139
+   "brk": true,
+   "to": 3213
   },
   {
    "text": "нам",
-   "from": 4139,
+   "from": 3213,
    "accent": false,
-   "to": 4149
+   "brk": false,
+   "to": 3223
   },
   {
    "text": "нет",
-   "from": 4149,
+   "from": 3223,
    "accent": false,
-   "to": 4156
+   "brk": false,
+   "to": 3230
   },
   {
    "text": "смысла",
-   "from": 4156,
+   "from": 3230,
    "accent": false,
-   "to": 4170
+   "brk": false,
+   "to": 3244
   },
   {
    "text": "вдвоем",
-   "from": 4170,
+   "from": 3244,
    "accent": false,
-   "to": 4192
+   "brk": false,
+   "to": 3266
   },
   {
    "text": "заниматься",
-   "from": 4192,
+   "from": 3266,
    "accent": false,
-   "to": 4211
+   "brk": false,
+   "to": 3285
   },
   {
    "text": "одной",
-   "from": 4211,
+   "from": 3285,
    "accent": false,
-   "to": 4223
+   "brk": false,
+   "to": 3297
   },
   {
    "text": "и",
-   "from": 4223,
+   "from": 3297,
    "accent": false,
-   "to": 4228
+   "brk": false,
+   "to": 3302
   },
   {
    "text": "той",
-   "from": 4228,
+   "from": 3302,
    "accent": false,
-   "to": 4235
+   "brk": false,
+   "to": 3309
   },
   {
    "text": "же",
-   "from": 4235,
+   "from": 3309,
    "accent": false,
-   "to": 4242
+   "brk": false,
+   "to": 3316
   },
   {
    "text": "задачей",
-   "from": 4242,
+   "from": 3316,
    "accent": false,
-   "to": 4287
+   "brk": true,
+   "to": 3332
   },
   {
    "text": "например",
-   "from": 4403,
+   "from": 3332,
    "accent": false,
-   "to": 4420
+   "brk": true,
+   "to": 3349
   },
   {
    "text": "мой",
-   "from": 4420,
+   "from": 3349,
    "accent": false,
-   "to": 4429
+   "brk": false,
+   "to": 3359
   },
   {
    "text": "муж",
-   "from": 4429,
+   "from": 3359,
    "accent": false,
-   "to": 4439
+   "brk": false,
+   "to": 3368
   },
   {
    "text": "ходит",
-   "from": 4439,
+   "from": 3368,
    "accent": false,
-   "to": 4451
+   "brk": false,
+   "to": 3380
   },
   {
    "text": "за",
-   "from": 4451,
+   "from": 3380,
    "accent": false,
-   "to": 4458
+   "brk": false,
+   "to": 3388
   },
   {
    "text": "водой",
-   "from": 4458,
+   "from": 3388,
    "accent": false,
-   "to": 4503
+   "brk": true,
+   "to": 3402
   },
   {
    "text": "я",
-   "from": 4564,
+   "from": 3402,
    "accent": false,
-   "to": 4571
+   "brk": false,
+   "to": 3407
   },
   {
    "text": "пью",
-   "from": 4571,
+   "from": 3407,
    "accent": false,
-   "to": 4580
+   "brk": false,
+   "to": 3417
   },
   {
    "text": "только",
-   "from": 4580,
+   "from": 3417,
    "accent": false,
-   "to": 4588
+   "brk": false,
+   "to": 3424
   },
   {
    "text": "бутилированную",
-   "from": 4588,
+   "from": 3424,
    "accent": false,
-   "to": 4612
+   "brk": false,
+   "to": 3448
   },
   {
    "text": "воду",
-   "from": 4612,
+   "from": 3448,
    "accent": false,
-   "to": 4648
+   "brk": true,
+   "to": 3455
   },
   {
    "text": "а",
-   "from": 4648,
+   "from": 3455,
    "accent": false,
-   "to": 4655
+   "brk": false,
+   "to": 3459
   },
   {
    "text": "я",
-   "from": 4655,
+   "from": 3459,
    "accent": false,
-   "to": 4660
+   "brk": false,
+   "to": 3463
   },
   {
    "text": "заказываю",
-   "from": 4660,
+   "from": 3463,
    "accent": false,
-   "to": 4676
+   "brk": false,
+   "to": 3480
   },
   {
    "text": "продукты",
-   "from": 4676,
+   "from": 3480,
    "accent": false,
-   "to": 4721
+   "brk": true,
+   "to": 3498
   },
   {
    "text": "и",
-   "from": 4831,
+   "from": 3498,
    "accent": false,
-   "to": 4839
+   "brk": false,
+   "to": 3502
   },
   {
    "text": "это",
-   "from": 4839,
+   "from": 3502,
    "accent": false,
-   "to": 4846
+   "brk": false,
+   "to": 3509
   },
   {
    "text": "разделенная",
-   "from": 4846,
+   "from": 3509,
    "accent": false,
-   "to": 4867
+   "brk": false,
+   "to": 3531
   },
   {
    "text": "зона",
-   "from": 4867,
+   "from": 3531,
    "accent": false,
-   "to": 4877
+   "brk": false,
+   "to": 3540
   },
   {
    "text": "ответственности",
-   "from": 4877,
+   "from": 3540,
    "accent": true,
-   "to": 4896
+   "brk": true,
+   "to": 3560
   },
   {
    "text": "он",
-   "from": 4896,
+   "from": 3560,
    "accent": false,
-   "to": 4901
+   "brk": false,
+   "to": 3564
   },
   {
    "text": "делает",
-   "from": 4901,
+   "from": 3564,
    "accent": false,
-   "to": 4911
+   "brk": false,
+   "to": 3574
   },
   {
    "text": "одно",
-   "from": 4911,
+   "from": 3574,
    "accent": false,
-   "to": 4923
+   "brk": true,
+   "to": 3586
   },
   {
    "text": "я",
-   "from": 4923,
+   "from": 3586,
    "accent": false,
-   "to": 4927
+   "brk": false,
+   "to": 3591
   },
   {
    "text": "делаю",
-   "from": 4927,
+   "from": 3591,
    "accent": false,
-   "to": 4937
+   "brk": false,
+   "to": 3600
   },
   {
    "text": "другое",
-   "from": 4937,
+   "from": 3600,
    "accent": false,
-   "to": 4951
+   "brk": true,
+   "to": 3615
   },
   {
    "text": "никто",
-   "from": 4951,
+   "from": 3615,
    "accent": false,
-   "to": 4959
+   "brk": false,
+   "to": 3622
   },
   {
    "text": "из",
-   "from": 4959,
+   "from": 3622,
    "accent": false,
-   "to": 4966
+   "brk": false,
+   "to": 3629
   },
   {
    "text": "нас",
-   "from": 4966,
+   "from": 3629,
    "accent": false,
-   "to": 4973
+   "brk": false,
+   "to": 3636
   },
   {
    "text": "не",
-   "from": 4973,
+   "from": 3636,
    "accent": false,
-   "to": 4978
+   "brk": false,
+   "to": 3641
   },
   {
    "text": "делает",
-   "from": 4978,
+   "from": 3641,
    "accent": false,
-   "to": 4987
+   "brk": false,
+   "to": 3651
   },
   {
    "text": "задачу",
-   "from": 4987,
+   "from": 3651,
    "accent": false,
-   "to": 5002
+   "brk": false,
+   "to": 3665
   },
   {
    "text": "друг",
-   "from": 5002,
+   "from": 3665,
    "accent": false,
-   "to": 5009
+   "brk": false,
+   "to": 3672
   },
   {
    "text": "друга",
-   "from": 5009,
+   "from": 3672,
    "accent": false,
-   "to": 5054
+   "brk": true,
+   "to": 3684
   },
   {
    "text": "в",
-   "from": 5115,
+   "from": 3684,
    "accent": false,
-   "to": 5122
+   "brk": false,
+   "to": 3691
   },
   {
    "text": "этом",
-   "from": 5122,
+   "from": 3691,
    "accent": false,
-   "to": 5129
+   "brk": false,
+   "to": 3699
   },
   {
    "text": "и",
-   "from": 5129,
+   "from": 3699,
    "accent": false,
-   "to": 5136
+   "brk": false,
+   "to": 3706
   },
   {
    "text": "есть",
-   "from": 5136,
+   "from": 3706,
    "accent": false,
-   "to": 5143
+   "brk": false,
+   "to": 3713
   },
   {
    "text": "смысл",
-   "from": 5143,
+   "from": 3713,
    "accent": false,
-   "to": 5188
+   "brk": true,
+   "to": 3728
   },
   {
    "text": "если",
-   "from": 5261,
+   "from": 3728,
    "accent": false,
-   "to": 5271
+   "brk": false,
+   "to": 3750
   },
   {
    "text": "вы",
-   "from": 5271,
+   "from": 3750,
    "accent": false,
-   "to": 5278
+   "brk": false,
+   "to": 3754
   },
   {
    "text": "уже",
-   "from": 5278,
+   "from": 3754,
    "accent": false,
-   "to": 5285
+   "brk": false,
+   "to": 3764
   },
   {
    "text": "знаете",
-   "from": 5285,
+   "from": 3764,
    "accent": false,
-   "to": 5292
-  },
-  {
-   "text": "если",
-   "from": 5292,
-   "accent": false,
-   "to": 5328
-  },
-  {
-   "text": "вы",
-   "from": 5328,
-   "accent": false,
-   "to": 5333
-  },
-  {
-   "text": "уже",
-   "from": 5333,
-   "accent": false,
-   "to": 5343
-  },
-  {
-   "text": "знаете",
-   "from": 5343,
-   "accent": false,
-   "to": 5355
+   "brk": false,
+   "to": 3776
   },
   {
    "text": "о",
-   "from": 5355,
+   "from": 3776,
    "accent": false,
-   "to": 5364
+   "brk": false,
+   "to": 3786
   },
   {
    "text": "том",
-   "from": 5364,
+   "from": 3786,
    "accent": false,
-   "to": 5369
+   "brk": true,
+   "to": 3790
   },
   {
    "text": "куда",
-   "from": 5369,
+   "from": 3790,
    "accent": false,
-   "to": 5376
+   "brk": false,
+   "to": 3798
   },
   {
    "text": "надо",
-   "from": 5376,
+   "from": 3798,
    "accent": false,
-   "to": 5386
+   "brk": false,
+   "to": 3807
   },
   {
    "text": "записаться",
-   "from": 5386,
+   "from": 3807,
    "accent": false,
-   "to": 5405
+   "brk": true,
+   "to": 3826
   },
   {
    "text": "куда",
-   "from": 5405,
+   "from": 3826,
    "accent": false,
-   "to": 5412
+   "brk": false,
+   "to": 3834
   },
   {
    "text": "сходить",
-   "from": 5412,
+   "from": 3834,
    "accent": false,
-   "to": 5424
+   "brk": false,
+   "to": 3846
   },
   {
    "text": "что-то",
-   "from": 5424,
+   "from": 3846,
    "accent": false,
-   "to": 5436
+   "brk": false,
+   "to": 3858
   },
   {
    "text": "сказать",
-   "from": 5436,
+   "from": 3858,
    "accent": false,
-   "to": 5448
+   "brk": true,
+   "to": 3870
   },
   {
    "text": "вашему",
-   "from": 5448,
+   "from": 3870,
    "accent": false,
-   "to": 5460
+   "brk": false,
+   "to": 3882
   },
   {
    "text": "мужу",
-   "from": 5460,
+   "from": 3882,
    "accent": false,
-   "to": 5470
+   "brk": false,
+   "to": 3891
   },
   {
    "text": "не",
-   "from": 5470,
+   "from": 3891,
    "accent": false,
-   "to": 5477
+   "brk": false,
+   "to": 3898
   },
   {
    "text": "нужно",
-   "from": 5477,
+   "from": 3898,
    "accent": false,
-   "to": 5484
+   "brk": false,
+   "to": 3906
   },
   {
    "text": "решать",
-   "from": 5484,
+   "from": 3906,
    "accent": false,
-   "to": 5499
+   "brk": false,
+   "to": 3920
   },
   {
    "text": "эту",
-   "from": 5499,
+   "from": 3920,
    "accent": false,
-   "to": 5508
+   "brk": false,
+   "to": 3930
   },
   {
    "text": "задачу",
-   "from": 5508,
+   "from": 3930,
    "accent": false,
-   "to": 5530
+   "brk": true,
+   "to": 3944
   },
   {
    "text": "он",
-   "from": 5530,
+   "from": 3944,
    "accent": false,
-   "to": 5537
+   "brk": false,
+   "to": 3949
   },
   {
    "text": "возьмет",
-   "from": 5537,
+   "from": 3949,
    "accent": false,
-   "to": 5549
+   "brk": false,
+   "to": 3961
   },
   {
    "text": "следующую",
-   "from": 5549,
+   "from": 3961,
    "accent": false,
-   "to": 5592
+   "brk": true,
+   "to": 3983
   },
   {
    "text": "чтобы",
-   "from": 5592,
+   "from": 3983,
    "accent": false,
-   "to": 5604
+   "brk": false,
+   "to": 3994
   },
   {
    "text": "вы",
-   "from": 5604,
+   "from": 3994,
    "accent": false,
-   "to": 5614
+   "brk": false,
+   "to": 4004
   },
   {
    "text": "о",
-   "from": 5614,
+   "from": 4004,
    "accent": false,
-   "to": 5619
+   "brk": false,
+   "to": 4009
   },
   {
    "text": "ней",
-   "from": 5619,
+   "from": 4009,
    "accent": false,
-   "to": 5624
+   "brk": false,
+   "to": 4013
   },
   {
    "text": "уже",
-   "from": 5624,
+   "from": 4013,
    "accent": false,
-   "to": 5633
+   "brk": false,
+   "to": 4023
   },
   {
    "text": "не",
-   "from": 5633,
+   "from": 4023,
    "accent": false,
-   "to": 5640
+   "brk": false,
+   "to": 4030
   },
   {
    "text": "думали",
-   "from": 5640,
+   "from": 4030,
    "accent": false,
-   "to": 5685
+   "brk": true,
+   "to": 4041
   },
   {
    "text": "и",
-   "from": 5747,
+   "from": 4041,
    "accent": false,
-   "to": 5755
+   "brk": false,
+   "to": 4044
   },
   {
    "text": "заметь",
-   "from": 5755,
+   "from": 4044,
    "accent": false,
-   "to": 5774
+   "brk": true,
+   "to": 4063
   },
   {
    "text": "отношения",
-   "from": 5774,
+   "from": 4063,
    "accent": false,
-   "to": 5786
+   "brk": false,
+   "to": 4075
   },
   {
    "text": "достаточно",
-   "from": 5786,
+   "from": 4075,
    "accent": false,
-   "to": 5805
+   "brk": false,
+   "to": 4094
   },
   {
    "text": "простая",
-   "from": 5805,
+   "from": 4094,
    "accent": false,
-   "to": 5824
+   "brk": false,
+   "to": 4113
   },
   {
    "text": "тема",
-   "from": 5824,
+   "from": 4113,
    "accent": false,
-   "to": 5841
+   "brk": true,
+   "to": 4130
   },
   {
    "text": "если",
-   "from": 5841,
+   "from": 4130,
    "accent": false,
-   "to": 5846
+   "brk": false,
+   "to": 4135
   },
   {
    "text": "вы",
-   "from": 5846,
+   "from": 4135,
    "accent": false,
-   "to": 5851
+   "brk": false,
+   "to": 4140
   },
   {
    "text": "не",
-   "from": 5851,
+   "from": 4140,
    "accent": false,
-   "to": 5855
+   "brk": false,
+   "to": 4144
   },
   {
    "text": "будете",
-   "from": 5855,
+   "from": 4144,
    "accent": false,
-   "to": 5865
+   "brk": false,
+   "to": 4154
   },
   {
    "text": "ее",
-   "from": 5865,
+   "from": 4154,
    "accent": false,
-   "to": 5875
+   "brk": false,
+   "to": 4164
   },
   {
    "text": "специально",
-   "from": 5875,
+   "from": 4164,
    "accent": false,
-   "to": 5889
+   "brk": false,
+   "to": 4178
   },
   {
    "text": "усложнять",
-   "from": 5889,
+   "from": 4178,
    "accent": false,
-   "to": 5927
+   "brk": true,
+   "to": 4199
   },
   {
    "text": "если",
-   "from": 5927,
+   "from": 4199,
    "accent": false,
-   "to": 5937
+   "brk": false,
+   "to": 4208
   },
   {
    "text": "вы",
-   "from": 5937,
+   "from": 4208,
    "accent": false,
-   "to": 5944
+   "brk": false,
+   "to": 4215
   },
   {
    "text": "хотите",
-   "from": 5944,
+   "from": 4215,
    "accent": false,
-   "to": 5954
+   "brk": false,
+   "to": 4225
   },
   {
    "text": "еще",
-   "from": 5954,
+   "from": 4225,
    "accent": false,
-   "to": 5966
+   "brk": false,
+   "to": 4237
   },
   {
    "text": "больше",
-   "from": 5966,
+   "from": 4237,
    "accent": false,
-   "to": 5978
+   "brk": false,
+   "to": 4249
   },
   {
    "text": "преисполниться",
-   "from": 5978,
+   "from": 4249,
    "accent": false,
-   "to": 6002
+   "brk": false,
+   "to": 4273
   },
   {
    "text": "в",
-   "from": 6002,
+   "from": 4273,
    "accent": false,
-   "to": 6004
+   "brk": false,
+   "to": 4275
   },
   {
    "text": "этой",
-   "from": 6004,
+   "from": 4275,
    "accent": false,
-   "to": 6011
+   "brk": false,
+   "to": 4283
   },
   {
    "text": "теме",
-   "from": 6011,
+   "from": 4283,
    "accent": false,
-   "to": 6019
+   "brk": false,
+   "to": 4290
   },
   {
    "text": "и",
-   "from": 6019,
+   "from": 4290,
    "accent": false,
-   "to": 6026
+   "brk": false,
+   "to": 4297
   },
   {
    "text": "построить",
-   "from": 6026,
+   "from": 4297,
    "accent": false,
-   "to": 6040
+   "brk": false,
+   "to": 4311
   },
   {
    "text": "гармоничные",
-   "from": 6040,
+   "from": 4311,
    "accent": false,
-   "to": 6069
+   "brk": true,
+   "to": 4340
   },
   {
    "text": "замечательные",
-   "from": 6069,
+   "from": 4340,
    "accent": false,
-   "to": 6088
+   "brk": true,
+   "to": 4359
   },
   {
    "text": "долгосрочные",
-   "from": 6088,
+   "from": 4359,
    "accent": false,
-   "to": 6107
+   "brk": false,
+   "to": 4379
   },
   {
    "text": "отношения",
-   "from": 6107,
+   "from": 4379,
    "accent": false,
-   "to": 6134
+   "brk": true,
+   "to": 4398
   },
   {
    "text": "пишите",
-   "from": 6134,
+   "from": 4398,
    "accent": false,
-   "to": 6146
+   "brk": false,
+   "to": 4409
   },
   {
    "text": "мне",
-   "from": 6146,
+   "from": 4409,
    "accent": false,
-   "to": 6153
+   "brk": false,
+   "to": 4416
   },
   {
    "text": "слово",
-   "from": 6153,
+   "from": 4416,
    "accent": false,
-   "to": 6163
+   "brk": false,
+   "to": 4425
   },
   {
    "text": "любовь",
-   "from": 6163,
+   "from": 4425,
    "accent": true,
-   "to": 6172
+   "brk": false,
+   "to": 4435
   },
   {
    "text": "в",
-   "from": 6172,
+   "from": 4435,
    "accent": false,
-   "to": 6175
+   "brk": false,
+   "to": 4437
   },
   {
    "text": "директ",
-   "from": 6175,
+   "from": 4437,
    "accent": false,
-   "to": 6187
+   "brk": true,
+   "to": 4449
   },
   {
    "text": "и",
-   "from": 6187,
+   "from": 4449,
    "accent": false,
-   "to": 6189
+   "brk": false,
+   "to": 4452
   },
   {
    "text": "я",
-   "from": 6189,
+   "from": 4452,
    "accent": false,
-   "to": 6194
+   "brk": false,
+   "to": 4457
   },
   {
    "text": "пришлю",
-   "from": 6194,
+   "from": 4457,
    "accent": false,
-   "to": 6203
+   "brk": false,
+   "to": 4466
   },
   {
    "text": "вам",
-   "from": 6203,
+   "from": 4466,
    "accent": false,
-   "to": 6208
+   "brk": false,
+   "to": 4471
   },
   {
    "text": "ссылку",
-   "from": 6208,
+   "from": 4471,
    "accent": false,
-   "to": 6223
+   "brk": false,
+   "to": 4485
   },
   {
    "text": "на",
-   "from": 6223,
+   "from": 4485,
    "accent": false,
-   "to": 6232
+   "brk": false,
+   "to": 4495
   },
   {
    "text": "полное",
-   "from": 6232,
+   "from": 4495,
    "accent": false,
-   "to": 6247
+   "brk": false,
+   "to": 4509
   },
   {
    "text": "видеоразбор",
-   "from": 6247,
+   "from": 4509,
    "accent": false,
-   "to": 6273
+   "brk": false,
+   "to": 4536
   },
   {
    "text": "этой",
-   "from": 6273,
+   "from": 4536,
    "accent": false,
-   "to": 6287
+   "brk": false,
+   "to": 4550
   },
   {
    "text": "темы",
-   "from": 6287,
+   "from": 4550,
    "accent": false,
-   "to": 6311
+   "brk": true,
+   "to": 4556
   },
   {
    "text": "не",
-   "from": 6311,
+   "from": 4556,
    "accent": false,
-   "to": 6323
+   "brk": false,
+   "to": 4566
   },
   {
    "text": "благодарите",
-   "from": 6323,
+   "from": 4566,
    "accent": false,
-   "to": 6335
+   "brk": true,
+   "to": 4578
   }
  ],
  "punchZooms": [
   {
-   "from": 5,
+   "from": -4,
    "originY": 40.0
   },
   {
-   "from": 1479,
+   "from": 1220,
    "originY": 40.0
   },
   {
-   "from": 2017,
+   "from": 1698,
    "originY": 40.0
   },
   {
-   "from": 2691,
+   "from": 2329,
    "originY": 40.0
   },
   {
-   "from": 4873,
+   "from": 3536,
    "originY": 40.0
   },
   {
-   "from": 6159,
+   "from": 4421,
    "originY": 40.0
   }
  ],
  "inserts": [],
  "scenes": [
   {
-   "from": 458,
-   "to": 746,
+   "from": 402,
+   "to": 593,
    "cards": [
     {
-     "from": 458,
+     "from": 402,
      "src": "inserts/img0162/01a.jpg"
     },
     {
-     "from": 544,
+     "from": 488,
      "src": "inserts/img0162/01b.jpg"
     }
    ],
    "stamp": "15.8.68"
   },
   {
-   "from": 1793,
-   "to": 1973,
+   "from": 1478,
+   "to": 1654,
    "cards": [
     {
-     "from": 1793,
+     "from": 1478,
      "src": "inserts/img0162/02a.jpg"
     },
     {
-     "from": 1853,
+     "from": 1538,
      "src": "inserts/img0162/02b.jpg"
     }
    ],
    "stamp": "15.8.68"
   },
   {
-   "from": 1983,
-   "to": 2182,
+   "from": 1663,
+   "to": 1821,
    "cards": [
     {
-     "from": 1983,
+     "from": 1663,
      "src": "inserts/img0162/03b.jpg"
     },
     {
-     "from": 2091,
+     "from": 1751,
      "src": "inserts/img0162/03a.jpg"
     }
    ],
    "stamp": "15.8.68"
   },
   {
-   "from": 2225,
-   "to": 2453,
+   "from": 1870,
+   "to": 2092,
    "cards": [
     {
-     "from": 2251,
+     "from": 1897,
      "src": "inserts/img0162/04a.jpg"
     },
     {
-     "from": 2369,
+     "from": 2014,
      "src": "inserts/img0162/04b.jpg"
     }
    ],
    "stamp": "15.8.68"
   },
   {
-   "from": 2736,
-   "to": 2991,
+   "from": 2355,
+   "to": 2589,
    "cards": [
     {
-     "from": 2746,
+     "from": 2364,
      "src": "inserts/img0162/05b.jpg"
     },
     {
-     "from": 2928,
+     "from": 2547,
      "src": "inserts/img0162/05a.jpg"
     }
    ],
    "stamp": "15.8.68"
   },
   {
-   "from": 4439,
-   "to": 4645,
+   "from": 3368,
+   "to": 3460,
    "cards": [
     {
-     "from": 4439,
+     "from": 3368,
      "src": "inserts/img0162/06b.jpg"
     }
    ],
    "stamp": "15.8.68"
   },
   {
-   "from": 4648,
-   "to": 4866,
+   "from": 3455,
+   "to": 3529,
    "cards": [
     {
-     "from": 4648,
+     "from": 3455,
      "src": "inserts/img0162/07a.jpg"
     },
     {
-     "from": 4660,
+     "from": 3463,
      "src": "inserts/img0162/06a.jpg"
     }
    ],
    "stamp": "15.8.68"
   },
   {
-   "from": 6134,
-   "to": 6309,
+   "from": 4398,
+   "to": 4556,
    "cards": [
     {
-     "from": 6134,
+     "from": 4398,
      "src": "inserts/img0162/08a.jpg"
     },
     {
-     "from": 6187,
+     "from": 4449,
      "src": "inserts/img0162/08b.jpg"
     }
    ],
@@ -2885,5 +3428,5 @@
  ],
  "captionStyle": "plate",
  "audioTrack": "audio_short-img0162.wav",
- "totalDurationInFrames": 6377
+ "totalDurationInFrames": 4587
 }

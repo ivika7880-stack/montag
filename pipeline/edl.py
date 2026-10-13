@@ -33,6 +33,13 @@ MIN_KEEP_S = 0.060     # drop keep-segments shorter than this (short words betwe
 MAX_PAUSE_S = 0.12     # gaps between kept words longer than this get shrunk
 KEEP_TAIL_S = 0.04     # air left after a kept word
 KEEP_HEAD_S = 0.04     # air left before the next kept word
+# Audio-based tightening: ASR word edges can stretch over silence (a word "lasting" seconds),
+# so after the word-based cuts every real silent stretch inside a kept segment is cut as well.
+SIL_RMS = 0.0056       # RMS (~-45 dBFS) below which audio counts as a candidate silence
+DEEP_RMS = 0.0013      # RMS (~-58 dBFS): a dip whose MEDIAN is below it is a real pause (digital quiet)
+MIN_SILENCE_S = 0.10   # shortest REAL pause that gets cut
+MIN_SHALLOW_S = 0.22   # shallow dips (never reach DEEP_RMS) are plosive closures / breaths: cut only if long
+AIR_S = 0.04           # air kept on each side of a cut silence (~80 ms between words)
 EDGE_LOUD_RMS = 0.006  # RMS (~-44 dBFS) above which a cut edge would be inside speech
 EDGE_SHIFT_MAX_S = 0.12  # max distance a cut edge may be pushed away from a word to dodge speech
 # ASR sometimes drops a word entirely; its audio then sits inside a "gap" between kept words.
@@ -110,6 +117,28 @@ def gap_cuts(times, rms, a_end, b_start):
     return cuts
 
 
+def tighten(keeps, times, rms):
+    """Cut every silent run >= MIN_SILENCE_S inside the keep segments, leaving AIR_S on each side."""
+    out = []
+    for s, e in keeps:
+        idx = np.where((times >= s) & (times <= e) & (rms < SIL_RMS))[0]
+        cur = s
+        if idx.size:
+            for run in np.split(idx, np.where(np.diff(idx) > 1)[0] + 1):
+                r0, r1 = float(times[run[0]]), float(times[run[-1]])
+                deep = float(np.median(rms[run])) < DEEP_RMS
+                if r1 - r0 < (MIN_SILENCE_S if deep else MIN_SHALLOW_S):
+                    continue
+                cs, ce = max(r0, s) + AIR_S, min(r1, e) - AIR_S
+                if ce - cs >= MERGE_S:
+                    if cs > cur:
+                        out.append([cur, cs])
+                    cur = ce
+        if e > cur:
+            out.append([cur, e])
+    return [seg for seg in out if seg[1] - seg[0] >= MIN_KEEP_S]
+
+
 def merge_intervals(intervals):
     merged = []
     for s, e in sorted(intervals):
@@ -157,14 +186,12 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
             if w["i"] not in deleted:
                 next_kept_start = w["start"]
                 break
-        lo1 = max(prev_kept_end, first["start"] - SEARCH_PAD_S)
-        cut_start = quietest_point(times, rms, lo1, first["start"])
-        hi2 = min(next_kept_start, last["end"] + SEARCH_PAD_S)
-        # ASR timings of a deleted word can overrun the next kept word's start (overlapping
-        # takes): then search the quietest point BEFORE that start, else the midpoint would
-        # land inside the kept word and clip its onset.
-        lo2 = min(last["end"], hi2 - SEARCH_PAD_S)
-        cut_end = quietest_point(times, rms, lo2, hi2)
+        # ASR word ENDS are unreliable (they stretch over silence and overlap the next take),
+        # word STARTS are not: look for the quietest point just around the first deleted word's
+        # start and just before the next kept word's start, ignoring the neighbours' ends.
+        cut_start = quietest_point(times, rms, first["start"] - SEARCH_PAD_S, first["start"] + 0.03)
+        lo2 = max(last["start"] + 0.05, next_kept_start - SEARCH_PAD_S)
+        cut_end = quietest_point(times, rms, lo2, next_kept_start)
         if cut_end > cut_start:
             cut_intervals.append([cut_start, cut_end])
 
@@ -201,6 +228,8 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
             merged[-1][1] = seg[1]
         elif seg[1] - seg[0] >= MIN_KEEP_S:
             merged.append(seg)
+
+    merged = tighten(merged, times, rms)
 
     out = {
         "fps": fps,

@@ -25,7 +25,7 @@ export type ShortSeg = {
   tx: number; // horizontal crop offset (px) to centre the face
   faceY: number; // face centre Y in % (zoom origin)
 };
-export type ShortWord = { text: string; from: number; to: number; accent: boolean };
+export type ShortWord = { text: string; from: number; to: number; accent: boolean; brk?: boolean };
 export type ShortPunch = { from: number; originY: number };
 export type ShortInsert = {
   file: string;
