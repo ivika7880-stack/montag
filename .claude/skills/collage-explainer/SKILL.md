@@ -113,11 +113,12 @@ Honest map against `remotion/src/Shorts916.tsx` (read it before promising anythi
 
 Ассеты бывают двух видов:
 - **Иллюстративные** (атмосферные фото/видео: город, руки с телефоном, пустой зал) — **подбираю сам
-  на Pexels**: пишу `work/<id>/pexels_queries.json` (запросы по-английски, по одному на строку
-  `visual_map.md`) → `pipeline/pexels.py work\<id> --list` (показать кандидатов со ссылками) →
-  без `--list` скачивает в `remotion/public/inserts/<id>/` (видео — all-intra, ≤ 8 с, без звука)
-  и пишет `pexels_credits.md`. Нужен `PEXELS_API_KEY` в `.env` (бесплатный, pexels.com/api;
-  без него API отвечает 401).
+  на Pixabay**: пишу `work/<id>/stock_queries.json` (запросы по-английски, по одному на строку
+  `visual_map.md`) → `pipeline/pixabay.py work\<id> --list` (кандидаты со ссылками, выбираю по
+  тегам) → без `--list` скачивает в `remotion/public/inserts/<id>/` (видео — кроп в 1080×1920,
+  all-intra, ≤ 8 с, без звука) и пишет `stock_credits.md`. Нужен `PIXABAY_API_KEY` в `.env` и
+  доступ сети к `pixabay.com` **и `cdn.pixabay.com`** (файлы лежат на CDN). Запасной вариант —
+  `pipeline/pexels.py` (`PEXELS_API_KEY`, ключи выдаются не всегда).
 - **Доказательные** (конкретные люди, документы, статьи, афиши, скриншоты постов) — Pexels их
   **не даст**: это стоки, не про твой кейс. Такие карточки приносит пользователь
   (`work/<id>/assets/`); чужие фото из сети без ссылки от пользователя я не скачиваю.
