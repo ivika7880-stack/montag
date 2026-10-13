@@ -19,6 +19,8 @@ does (from `README.md`), tell them the three ways to start, and wait.
 - **Only shorts from a clip** (no full 16:9 edit) → shorts-only route: Stage 1-lite + Stage 2.
 - **Shorts factory** — тексты шортсов «перепиши под меня» / «придумай по темам» →
   `script-gen` (Shorts scripts) + shorts-only route; **ремейк чужого шортса** → Stage 2R.
+- **Коллажный разбор-скандал** (спикер + красные сцены со стопками карточек, вырезки, плашки-субтитры) →
+  skill **`collage-explainer`**.
 
 Do not render or push anything without an explicit user command. Preview is Studio-only.
 
