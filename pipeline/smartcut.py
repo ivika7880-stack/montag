@@ -16,7 +16,7 @@ Starts from an EDL (work/<id>/edl.json, see edl.py) and improves how the cuts LO
 
 Audio is cut on the same frame boundaries as the video (audio.py: 6 ms gate + de-click).
 
-Usage: python smartcut.py <work_dir> <source.mp4> <out.mp4> [--zoom 1.22] [--top 0.165]
+Usage: python smartcut.py <work_dir> <source.mp4> <out.mp4> [--zoom 1.18] [--top 0.21]
 Needs: work/<id>/{edl.json,audio.wav,faces_1fps.json}; ffmpeg; numpy, soundfile.
 faces_1fps.json = {"<second>": [x, y, w, h]} in a 360x640 frame (any face detector).
 """
@@ -41,8 +41,8 @@ QUIET_DB = -64.0             # a candidate cut frame must sit in silence (neighb
 QUIET_PAD_S = 0.06
 BACK_S, FWD_S = 0.40, 1.60   # how far around the original cut we may move it (inside silence)
 MOVE_PENALTY = 0.3           # picture-difference units per second of shift from the EDL cut
-HARD_MAX = 2.5               # picture difference (0..255 scale) up to which a plain cut is invisible
-XFADE_MAX = 7.0              # up to here a short cross-dissolve hides the cut
+HARD_MAX = 4.0               # picture difference (0..255 scale, face crop) up to which a plain cut is invisible
+XFADE_MAX = 11.0             # up to here a short cross-dissolve hides the cut
 XFADE_FRAMES = 6
 HANDLE = XFADE_FRAMES // 2
 PUNCH = 1.08                 # extra zoom on "punch" seams (alternates in/out)
@@ -162,7 +162,9 @@ def refine(segs, src, db, framing):
         for t in outs:
             a = fo[nearest(to, t)] if len(to) else None
             for u in ins:
-                if u <= t + 1.5 / AN_FPS:
+                # never keep MORE silence than the EDL cut did: the removed stretch may slide
+                # inside the silence but must stay at least as long as the original one
+                if u - t < (s - e) - 1.0 / AN_FPS or u <= t + 1.5 / AN_FPS:
                     continue
                 b = fi[nearest(ti, u)] if len(ti) else None
                 if a is None or b is None:
@@ -269,8 +271,8 @@ def main():
     ap.add_argument("work_dir")
     ap.add_argument("source")
     ap.add_argument("out")
-    ap.add_argument("--zoom", type=float, default=1.22)
-    ap.add_argument("--top", type=float, default=0.165, help="face-box top as a fraction of frame height")
+    ap.add_argument("--zoom", type=float, default=1.18)
+    ap.add_argument("--top", type=float, default=0.21, help="face-box top as a fraction of frame height")
     a = ap.parse_args()
     work, src, out = Path(a.work_dir), Path(a.source), Path(a.out)
     root = Path(__file__).resolve().parents[1]
