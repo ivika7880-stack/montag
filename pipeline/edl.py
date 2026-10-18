@@ -8,7 +8,9 @@ Three cut passes:
    shrunk to KEEP_TAIL_S + KEEP_HEAD_S;
 3. head/tail trim — silence before the first and after the last kept word.
 
-Usage: python edl.py <work_dir> <audio.wav> [fps]
+Usage: python edl.py <work_dir> <audio.wav> [fps=30] [profile=natural|tight]
+  natural (default) — long-form: only long dead air is shortened, micro-pauses stay;
+  tight — shorts: every pause above ~0.12 s goes (see PROFILES).
 Reads:  <work_dir>/words.json, <work_dir>/delete.json
 Writes: <work_dir>/edl.json
 
@@ -49,6 +51,21 @@ SPEECH_MIN_S = 0.06    # shortest loud stretch that counts as an untranscribed w
 SPEECH_PAD_S = 0.05    # air kept around such a stretch
 HEAD_LEAD_S = 0.30     # silence kept before the very first word
 TAIL_LEAD_S = 0.80     # silence kept after the very last word
+
+# Pause profiles. The values above are the "tight" profile (shorts: even micro-pauses go).
+# "natural" is for long-form: micro-pauses and breaths stay, only LONG dead air is shortened
+# (every silence >= 0.5 s is cut down to ~0.3 s), failed takes still go via delete.json.
+PROFILES = {
+    "tight": {},
+    "natural": dict(MAX_PAUSE_S=0.50, KEEP_TAIL_S=0.15, KEEP_HEAD_S=0.15,
+                    MIN_SILENCE_S=0.50, MIN_SHALLOW_S=0.60, AIR_S=0.15),
+}
+
+
+def apply_profile(name: str) -> None:
+    if name not in PROFILES:
+        raise SystemExit(f"unknown profile {name!r}: choose {', '.join(PROFILES)}")
+    globals().update(PROFILES[name])
 
 
 def rms_curve(wav_path: Path):
@@ -256,5 +273,9 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
 
 
 if __name__ == "__main__":
+    # usage: edl.py <work_dir> <audio.wav> [fps=30] [profile=natural|tight]
     fps = float(sys.argv[3]) if len(sys.argv) > 3 else 30.0
+    profile = sys.argv[4] if len(sys.argv) > 4 else "natural"
+    apply_profile(profile)
+    print(f"profile: {profile}")
     build_edl(Path(sys.argv[1]), Path(sys.argv[2]), fps)
