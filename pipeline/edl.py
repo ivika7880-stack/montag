@@ -37,16 +37,19 @@ KEEP_TAIL_S = 0.04     # air left after a kept word
 KEEP_HEAD_S = 0.04     # air left before the next kept word
 # Audio-based tightening: ASR word edges can stretch over silence (a word "lasting" seconds),
 # so after the word-based cuts every real silent stretch inside a kept segment is cut as well.
-SIL_RMS = 0.0056       # RMS (~-45 dBFS) below which audio counts as a candidate silence
-DEEP_RMS = 0.0013      # RMS (~-58 dBFS): a dip whose MEDIAN is below it is a real pause (digital quiet)
-MIN_SILENCE_S = 0.10   # shortest REAL pause that gets cut
-MIN_SHALLOW_S = 0.22   # shallow dips (never reach DEEP_RMS) are plosive closures / breaths: cut only if long
+# Silence level is ADAPTIVE (see build_edl): room-noise floor + SIL_MARGIN_DB. A fixed -45 dBFS
+# threshold clips soft word endings (unvoiced -ться, -ся, -сти sit at -50..-62 dBFS while this
+# kind of room "rings" at -70..-80), so only audio at the noise floor counts as silence.
+SIL_MARGIN_DB = 8      # silence = 5th-percentile RMS + this many dB (clamped below)
+SIL_MIN_DB, SIL_MAX_DB = -72.0, -58.0
+SIL_RMS = 10 ** (-65.0 / 20)   # overwritten per file by build_edl
+MIN_SILENCE_S = 0.10   # shortest silence that gets cut (profile-dependent)
 AIR_S = 0.04           # air kept on each side of a cut silence (~80 ms between words)
-EDGE_LOUD_RMS = 0.006  # RMS (~-44 dBFS) above which a cut edge would be inside speech
-EDGE_SHIFT_MAX_S = 0.12  # max distance a cut edge may be pushed away from a word to dodge speech
+EDGE_LOUD_RMS = 0.0009 # overwritten per file (silence level +3 dB): above it a cut edge would clip a word
+EDGE_SHIFT_MAX_S = 0.30  # max distance a cut edge may be pushed away from a word to dodge speech
 # ASR sometimes drops a word entirely; its audio then sits inside a "gap" between kept words.
 # Speech-level audio inside a gap is protected, only the real silence around it is cut.
-SPEECH_RMS = 0.010     # RMS (~-40 dBFS) counted as speech inside a gap
+SPEECH_RMS = 0.0056    # RMS (~-45 dBFS) counted as an untranscribed word inside a gap
 SPEECH_MIN_S = 0.06    # shortest loud stretch that counts as an untranscribed word
 SPEECH_PAD_S = 0.05    # air kept around such a stretch
 HEAD_LEAD_S = 0.30     # silence kept before the very first word
@@ -58,7 +61,7 @@ TAIL_LEAD_S = 0.80     # silence kept after the very last word
 PROFILES = {
     "tight": {},
     "natural": dict(MAX_PAUSE_S=0.50, KEEP_TAIL_S=0.15, KEEP_HEAD_S=0.15,
-                    MIN_SILENCE_S=0.50, MIN_SHALLOW_S=0.60, AIR_S=0.15),
+                    MIN_SILENCE_S=0.50, AIR_S=0.15),
 }
 
 
@@ -143,8 +146,7 @@ def tighten(keeps, times, rms):
         if idx.size:
             for run in np.split(idx, np.where(np.diff(idx) > 1)[0] + 1):
                 r0, r1 = float(times[run[0]]), float(times[run[-1]])
-                deep = float(np.median(rms[run])) < DEEP_RMS
-                if r1 - r0 < (MIN_SILENCE_S if deep else MIN_SHALLOW_S):
+                if r1 - r0 < MIN_SILENCE_S:
                     continue
                 cs, ce = max(r0, s) + AIR_S, min(r1, e) - AIR_S
                 if ce - cs >= MERGE_S:
@@ -175,6 +177,12 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
         deleted.update(range(d["from"], d["to"] + 1))
 
     times, rms, total = rms_curve(wav_path)
+    global SIL_RMS, EDGE_LOUD_RMS
+    floor_db = float(np.percentile(20 * np.log10(rms + 1e-9), 5))
+    sil_db = min(max(floor_db + SIL_MARGIN_DB, SIL_MIN_DB), SIL_MAX_DB)
+    SIL_RMS = 10 ** (sil_db / 20)
+    EDGE_LOUD_RMS = 10 ** ((sil_db + 3) / 20)
+    print(f"noise floor {floor_db:.0f} dBFS -> silence below {sil_db:.0f} dBFS")
     kept_words = [w for w in words if w["i"] not in deleted]
 
     cut_intervals = []
@@ -206,8 +214,10 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
         # ASR word ENDS are unreliable (they stretch over silence and overlap the next take),
         # word STARTS are not: look for the quietest point just around the first deleted word's
         # start and just before the next kept word's start, ignoring the neighbours' ends.
-        cut_start = quietest_point(times, rms, first["start"] - SEARCH_PAD_S, first["start"] + 0.03)
-        lo2 = max(last["start"] + 0.05, next_kept_start - SEARCH_PAD_S)
+        # The ASR start of a deleted word is usually a bit EARLY (the previous kept word's soft
+        # ending, e.g. -тся, still rings there), so look slightly past it for the dip.
+        cut_start = quietest_point(times, rms, first["start"] - 0.10, first["start"] + 0.22)
+        lo2 = max(last["start"] + 0.05, next_kept_start - 0.25)
         cut_end = quietest_point(times, rms, lo2, next_kept_start)
         if cut_end > cut_start:
             cut_intervals.append([cut_start, cut_end])
