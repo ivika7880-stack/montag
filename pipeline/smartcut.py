@@ -16,7 +16,7 @@ Starts from an EDL (work/<id>/edl.json, see edl.py) and improves how the cuts LO
 
 Audio is cut on the same frame boundaries as the video (audio.py: 6 ms gate + de-click).
 
-Usage: python smartcut.py <work_dir> <source.mp4> <out.mp4> [--zoom 1.18] [--top 0.21]
+Usage: python smartcut.py <work_dir> <source.mp4> <out.mp4> [--profile longform|default] [--zoom Z] [--top T] [--lufs L]
 Needs: work/<id>/{edl.json,audio.wav,faces_1fps.json}; ffmpeg; numpy, soundfile.
 faces_1fps.json = {"<second>": [x, y, w, h]} in a 360x640 frame (any face detector).
 """
@@ -251,14 +251,17 @@ def render(src, out, fr, kinds, seg_punch, framing, workdir, jobs=4):
     return lst
 
 
-def build_audio(fr, src, root):
+def build_audio(fr, src, root, lufs=None):
     """audio.py de-click track for the refined frame segments -> wav path."""
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     import audio
     props = root / "remotion" / "props" / "_smartcut.json"
     segs = [{"startFrame": a, "endFrame": b, "start": a / FPS, "end": b / FPS} for a, b in fr]
-    props.write_text(json.dumps({"fps": FPS, "src": src.name, "segments": segs,
-                                 "totalDurationInFrames": sum(b - a for a, b in fr)}), encoding="utf-8")
+    cfg = {"fps": FPS, "src": src.name, "segments": segs,
+           "totalDurationInFrames": sum(b - a for a, b in fr)}
+    if lufs is not None:
+        cfg["targetLufs"] = lufs
+    props.write_text(json.dumps(cfg), encoding="utf-8")
     try:
         audio.build(props, src)
     finally:
@@ -271,10 +274,23 @@ def main():
     ap.add_argument("work_dir")
     ap.add_argument("source")
     ap.add_argument("out")
-    ap.add_argument("--zoom", type=float, default=1.18)
-    ap.add_argument("--top", type=float, default=0.21, help="face-box top as a fraction of frame height")
+    ap.add_argument("--profile", choices=("longform", "default"), default="longform",
+                    help="longform = the author's style measured on her manual edit: zoom x1.41, face top 16.4%%, "
+                         "ONE scale (no punch-in), plain cuts only, loudness -19 LUFS (gain only)")
+    ap.add_argument("--zoom", type=float, default=None)
+    ap.add_argument("--top", type=float, default=None, help="face-box top as a fraction of frame height")
+    ap.add_argument("--lufs", type=float, default=None, help="target loudness, linear gain only (longform: -19)")
     a = ap.parse_args()
     work, src, out = Path(a.work_dir), Path(a.source), Path(a.out)
+    global HARD_MAX, XFADE_MAX
+    if a.profile == "longform":
+        a.zoom = a.zoom or 1.41
+        a.top = a.top or 0.164
+        a.lufs = -19.0 if a.lufs is None else a.lufs
+        HARD_MAX = XFADE_MAX = 1e9              # every seam is a plain cut at one constant scale
+    else:
+        a.zoom = a.zoom or 1.18
+        a.top = a.top or 0.21
     root = Path(__file__).resolve().parents[1]
     faces = json.loads((work / "faces_1fps.json").read_text(encoding="utf-8"))
     framing = Framing(faces, a.zoom, a.top)
@@ -297,7 +313,7 @@ def main():
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         lst = render(src, out, fr, kinds, seg_punch, framing, td)
-        wav = build_audio(fr, src, root)
+        wav = build_audio(fr, src, root, a.lufs)
         out.parent.mkdir(parents=True, exist_ok=True)
         run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-i", str(wav),
              "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ac", "2",

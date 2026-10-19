@@ -10,7 +10,9 @@ Three cut passes:
 
 Usage: python edl.py <work_dir> <audio.wav> [fps=30] [profile=natural|tight]
   natural (default) — long-form: only long dead air is shortened, micro-pauses stay;
-  tight — shorts: every pause above ~0.12 s goes (see PROFILES).
+  tight — shorts: every pause above ~0.12 s goes (see PROFILES);
+  longform — the author's long videos: micro-pauses stay, every pause >= 0.7 s (even with
+    breath/noise) shrinks to ~0.5 s, fillers cut via fillers.py (run it first).
 Reads:  <work_dir>/words.json, <work_dir>/delete.json
 Writes: <work_dir>/edl.json
 
@@ -45,6 +47,8 @@ SIL_MIN_DB, SIL_MAX_DB = -72.0, -58.0
 SIL_RMS = 10 ** (-65.0 / 20)   # overwritten per file by build_edl
 MIN_SILENCE_S = 0.10   # shortest silence that gets cut (profile-dependent)
 AIR_S = 0.04           # air kept on each side of a cut silence (~80 ms between words)
+AIR_TAIL_S = AIR_S     # ... after the word before the cut (soft endings need more in longform)
+AIR_HEAD_S = AIR_S     # ... before the word after the cut
 EDGE_LOUD_RMS = 0.0009 # overwritten per file (silence level +3 dB): above it a cut edge would clip a word
 EDGE_SHIFT_MAX_S = 0.30  # max distance a cut edge may be pushed away from a word to dodge speech
 # ASR sometimes drops a word entirely; its audio then sits inside a "gap" between kept words.
@@ -58,17 +62,30 @@ TAIL_LEAD_S = 0.80     # silence kept after the very last word
 # Pause profiles. The values above are the "tight" profile (shorts: even micro-pauses go).
 # "natural" is for long-form: micro-pauses and breaths stay, only LONG dead air is shortened
 # (every silence >= 0.5 s is cut down to ~0.3 s), failed takes still go via delete.json.
+LONGFORM = False
+KEEP_ZONES = []   # [t0, t1] ranges ASR missed but that ARE words (from fillers.py), protected in longform
+
 PROFILES = {
     "tight": {},
     "natural": dict(MAX_PAUSE_S=0.50, KEEP_TAIL_S=0.15, KEEP_HEAD_S=0.15,
                     MIN_SILENCE_S=0.50, AIR_S=0.15),
+    # Long-form (the author's style, measured on her own manual edit): micro-pauses stay, every
+    # LONG pause goes even if it holds breath/noise (threshold = noise floor + 24 dB), ~0.5 s of
+    # air is left (0.3 after a word: soft endings -ться/-ся ring that long; 0.2 before the next),
+    # fillers ("ээ") are cut via fillers.py, words ASR missed are protected.
+    "longform": dict(MAX_PAUSE_S=0.70, KEEP_TAIL_S=0.30, KEEP_HEAD_S=0.20, MIN_SILENCE_S=0.70,
+                     AIR_TAIL_S=0.30, AIR_HEAD_S=0.20, SIL_MARGIN_DB=24, SIL_MAX_DB=-45.0,
+                     LONGFORM=True),
 }
 
 
 def apply_profile(name: str) -> None:
     if name not in PROFILES:
         raise SystemExit(f"unknown profile {name!r}: choose {', '.join(PROFILES)}")
-    globals().update(PROFILES[name])
+    prof = PROFILES[name]
+    globals().update(prof)
+    if "AIR_S" in prof:                      # symmetric profiles
+        globals().update(AIR_TAIL_S=prof["AIR_S"], AIR_HEAD_S=prof["AIR_S"])
 
 
 def rms_curve(wav_path: Path):
@@ -121,13 +138,18 @@ def safe_cut(times, rms, a_end, b_start):
 
 def gap_cuts(times, rms, a_end, b_start):
     """Cut intervals for the gap between two kept words, never through untranscribed speech."""
-    idx = np.where((times >= a_end) & (times <= b_start) & (rms > SPEECH_RMS))[0]
     zones = []
-    if idx.size:
-        for run in np.split(idx, np.where(np.diff(idx) > 1)[0] + 1):
-            t0, t1 = float(times[run[0]]), float(times[run[-1]])
-            if t1 - t0 >= SPEECH_MIN_S:
-                zones.append([t0 - SPEECH_PAD_S, t1 + SPEECH_PAD_S])
+    if LONGFORM:        # words ASR missed were found by fillers.py; fillers/breaths are NOT protected
+        for z0, z1 in KEEP_ZONES:
+            if z1 > a_end and z0 < b_start:
+                zones.append([z0 - SPEECH_PAD_S, z1 + SPEECH_PAD_S])
+    else:
+        idx = np.where((times >= a_end) & (times <= b_start) & (rms > SPEECH_RMS))[0]
+        if idx.size:
+            for run in np.split(idx, np.where(np.diff(idx) > 1)[0] + 1):
+                t0, t1 = float(times[run[0]]), float(times[run[-1]])
+                if t1 - t0 >= SPEECH_MIN_S:
+                    zones.append([t0 - SPEECH_PAD_S, t1 + SPEECH_PAD_S])
     zones = merge_intervals(zones)
     cuts, cursor = [], a_end
     for z0, z1 in zones + [[b_start, b_start]]:
@@ -148,7 +170,7 @@ def tighten(keeps, times, rms):
                 r0, r1 = float(times[run[0]]), float(times[run[-1]])
                 if r1 - r0 < MIN_SILENCE_S:
                     continue
-                cs, ce = max(r0, s) + AIR_S, min(r1, e) - AIR_S
+                cs, ce = max(r0, s) + AIR_TAIL_S, min(r1, e) - AIR_HEAD_S
                 if ce - cs >= MERGE_S:
                     if cs > cur:
                         out.append([cur, cs])
@@ -186,6 +208,15 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
     kept_words = [w for w in words if w["i"] not in deleted]
 
     cut_intervals = []
+    global KEEP_ZONES
+    fc = work_dir / "filler_cuts.json"
+    if LONGFORM and fc.exists():
+        data = json.loads(fc.read_text(encoding="utf-8"))
+        KEEP_ZONES = [list(z) for z in data.get("keep", [])]
+        cut_intervals.extend([list(c) for c in data.get("cut", [])])
+        print(f"fillers/breaths to cut: {len(data.get('cut', []))}; protected words ASR missed: {len(KEEP_ZONES)}")
+    elif LONGFORM:
+        print("note: no filler_cuts.json - run fillers.py first to cut 'ээ' and protect missed words")
 
     # --- pass 1: deleted word runs ---
     run = []
@@ -283,7 +314,7 @@ def build_edl(work_dir: Path, wav_path: Path, fps: float = 30.0):
 
 
 if __name__ == "__main__":
-    # usage: edl.py <work_dir> <audio.wav> [fps=30] [profile=natural|tight]
+    # usage: edl.py <work_dir> <audio.wav> [fps=30] [profile=natural|tight|longform]
     fps = float(sys.argv[3]) if len(sys.argv) > 3 else 30.0
     profile = sys.argv[4] if len(sys.argv) > 4 else "natural"
     apply_profile(profile)

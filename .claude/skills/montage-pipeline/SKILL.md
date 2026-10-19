@@ -42,6 +42,11 @@ Stage 1 (тот же `<id>`; маркеры наследует `broll-gen` на 
 3. `indexed.py` → `indexed.txt` (compact view for markup).
 4. **Claude** reads `utterances.txt` + `indexed.txt`, writes `delete.json` (cut fillers/dupes —
    Deepgram filler_words is unreliable for Russian, so Claude does it).
+5. **Длинные видео:** сначала `fillers.py` (ээ/дыхание — вырезать, слова, которые ASR пропустил, — беречь), затем
+   `edl.py <work> <wav> 30 longform`. В `delete.json` помимо срывов и дублей режем **повторные пересказы мысли,
+   оговорки с самоисправлением, повтор вопроса, фразы-воду**, и показываем их в REVIEW отдельным списком.
+   Монтаж → `smartcut.py` (зум ×1.41, прямые склейки, звук −19 LUFS gain-only). Детали — `docs/PIPELINE.md`.
+   Шортсы: `edl.py … tight`.
 5. `edl.py` → `edl.json` (segments + frames). Never hand-edit; always via `delete.json`.
 6. `review.py` → `REVIEW.md`. **Mandatory review point** — show the user, wait for OK.
 7. `faces.py` → `faces.json` (face position every 5 s).
