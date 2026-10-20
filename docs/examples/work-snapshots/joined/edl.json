@@ -1,0 +1,625 @@
+{
+ "fps": 30.0,
+ "source_duration": 2393.621,
+ "kept_duration": 2150.907,
+ "segments": [
+  {
+   "start": 14.038,
+   "end": 17.19,
+   "startFrame": 421,
+   "endFrame": 516
+  },
+  {
+   "start": 17.51,
+   "end": 51.38,
+   "startFrame": 525,
+   "endFrame": 1541
+  },
+  {
+   "start": 51.68,
+   "end": 63.31,
+   "startFrame": 1550,
+   "endFrame": 1899
+  },
+  {
+   "start": 63.59,
+   "end": 68.74,
+   "startFrame": 1908,
+   "endFrame": 2062
+  },
+  {
+   "start": 72.565,
+   "end": 75.16,
+   "startFrame": 2177,
+   "endFrame": 2255
+  },
+  {
+   "start": 75.54,
+   "end": 81.86,
+   "startFrame": 2266,
+   "endFrame": 2456
+  },
+  {
+   "start": 82.14,
+   "end": 84.805,
+   "startFrame": 2464,
+   "endFrame": 2544
+  },
+  {
+   "start": 95.034,
+   "end": 102.64,
+   "startFrame": 2851,
+   "endFrame": 3079
+  },
+  {
+   "start": 102.94,
+   "end": 163.11,
+   "startFrame": 3088,
+   "endFrame": 4893
+  },
+  {
+   "start": 163.69,
+   "end": 167.606,
+   "startFrame": 4911,
+   "endFrame": 5028
+  },
+  {
+   "start": 193.342,
+   "end": 208.538,
+   "startFrame": 5800,
+   "endFrame": 6256
+  },
+  {
+   "start": 216.454,
+   "end": 267.87,
+   "startFrame": 6494,
+   "endFrame": 8036
+  },
+  {
+   "start": 268.22,
+   "end": 278.635,
+   "startFrame": 8047,
+   "endFrame": 8359
+  },
+  {
+   "start": 286.76,
+   "end": 337.328,
+   "startFrame": 8603,
+   "endFrame": 10120
+  },
+  {
+   "start": 338.836,
+   "end": 346.1,
+   "startFrame": 10165,
+   "endFrame": 10383
+  },
+  {
+   "start": 346.41,
+   "end": 351.96,
+   "startFrame": 10392,
+   "endFrame": 10559
+  },
+  {
+   "start": 352.44,
+   "end": 384.284,
+   "startFrame": 10573,
+   "endFrame": 11529
+  },
+  {
+   "start": 387.796,
+   "end": 392.48,
+   "startFrame": 11634,
+   "endFrame": 11774
+  },
+  {
+   "start": 392.75,
+   "end": 432.865,
+   "startFrame": 11782,
+   "endFrame": 12986
+  },
+  {
+   "start": 433.665,
+   "end": 439.69,
+   "startFrame": 13010,
+   "endFrame": 13191
+  },
+  {
+   "start": 443.03,
+   "end": 446.22,
+   "startFrame": 13291,
+   "endFrame": 13387
+  },
+  {
+   "start": 447.18,
+   "end": 460.755,
+   "startFrame": 13415,
+   "endFrame": 13823
+  },
+  {
+   "start": 473.146,
+   "end": 512.46,
+   "startFrame": 14194,
+   "endFrame": 15374
+  },
+  {
+   "start": 512.99,
+   "end": 538.74,
+   "startFrame": 15390,
+   "endFrame": 16162
+  },
+  {
+   "start": 539.17,
+   "end": 618.44,
+   "startFrame": 16175,
+   "endFrame": 18553
+  },
+  {
+   "start": 621.912,
+   "end": 629.894,
+   "startFrame": 18657,
+   "endFrame": 18897
+  },
+  {
+   "start": 643.37,
+   "end": 772.56,
+   "startFrame": 19301,
+   "endFrame": 23177
+  },
+  {
+   "start": 772.96,
+   "end": 777.145,
+   "startFrame": 23189,
+   "endFrame": 23314
+  },
+  {
+   "start": 786.994,
+   "end": 792.1,
+   "startFrame": 23610,
+   "endFrame": 23763
+  },
+  {
+   "start": 792.46,
+   "end": 817.16,
+   "startFrame": 23774,
+   "endFrame": 24515
+  },
+  {
+   "start": 817.41,
+   "end": 822.11,
+   "startFrame": 24522,
+   "endFrame": 24663
+  },
+  {
+   "start": 822.39,
+   "end": 842.07,
+   "startFrame": 24672,
+   "endFrame": 25262
+  },
+  {
+   "start": 842.61,
+   "end": 880.21,
+   "startFrame": 25278,
+   "endFrame": 26406
+  },
+  {
+   "start": 880.53,
+   "end": 898.435,
+   "startFrame": 26416,
+   "endFrame": 26953
+  },
+  {
+   "start": 902.21,
+   "end": 927.4,
+   "startFrame": 27066,
+   "endFrame": 27822
+  },
+  {
+   "start": 928.2,
+   "end": 933.44,
+   "startFrame": 27846,
+   "endFrame": 28003
+  },
+  {
+   "start": 936.915,
+   "end": 969.766,
+   "startFrame": 28107,
+   "endFrame": 29093
+  },
+  {
+   "start": 969.962,
+   "end": 1029.508,
+   "startFrame": 29099,
+   "endFrame": 30885
+  },
+  {
+   "start": 1034.316,
+   "end": 1049.72,
+   "startFrame": 31029,
+   "endFrame": 31492
+  },
+  {
+   "start": 1050.51,
+   "end": 1054.31,
+   "startFrame": 31515,
+   "endFrame": 31629
+  },
+  {
+   "start": 1054.74,
+   "end": 1076.36,
+   "startFrame": 31642,
+   "endFrame": 32291
+  },
+  {
+   "start": 1076.72,
+   "end": 1082.47,
+   "startFrame": 32302,
+   "endFrame": 32474
+  },
+  {
+   "start": 1082.77,
+   "end": 1085.36,
+   "startFrame": 32483,
+   "endFrame": 32561
+  },
+  {
+   "start": 1085.79,
+   "end": 1094.46,
+   "startFrame": 32574,
+   "endFrame": 32834
+  },
+  {
+   "start": 1094.81,
+   "end": 1113.994,
+   "startFrame": 32844,
+   "endFrame": 33420
+  },
+  {
+   "start": 1124.626,
+   "end": 1201.52,
+   "startFrame": 33739,
+   "endFrame": 36046
+  },
+  {
+   "start": 1207.6,
+   "end": 1209.93,
+   "startFrame": 36228,
+   "endFrame": 36298
+  },
+  {
+   "start": 1210.19,
+   "end": 1220.594,
+   "startFrame": 36306,
+   "endFrame": 36618
+  },
+  {
+   "start": 1221.538,
+   "end": 1232.822,
+   "startFrame": 36646,
+   "endFrame": 36985
+  },
+  {
+   "start": 1236.734,
+   "end": 1241.98,
+   "startFrame": 37102,
+   "endFrame": 37259
+  },
+  {
+   "start": 1242.23,
+   "end": 1249.25,
+   "startFrame": 37267,
+   "endFrame": 37478
+  },
+  {
+   "start": 1249.51,
+   "end": 1252.9,
+   "startFrame": 37485,
+   "endFrame": 37587
+  },
+  {
+   "start": 1253.24,
+   "end": 1261.95,
+   "startFrame": 37597,
+   "endFrame": 37858
+  },
+  {
+   "start": 1262.27,
+   "end": 1277.808,
+   "startFrame": 37868,
+   "endFrame": 38334
+  },
+  {
+   "start": 1280.796,
+   "end": 1283.784,
+   "startFrame": 38424,
+   "endFrame": 38514
+  },
+  {
+   "start": 1284.668,
+   "end": 1285.02,
+   "startFrame": 38540,
+   "endFrame": 38551
+  },
+  {
+   "start": 1286.358,
+   "end": 1287.83,
+   "startFrame": 38591,
+   "endFrame": 38635
+  },
+  {
+   "start": 1288.18,
+   "end": 1291.56,
+   "startFrame": 38645,
+   "endFrame": 38747
+  },
+  {
+   "start": 1295.08,
+   "end": 1323.47,
+   "startFrame": 38852,
+   "endFrame": 39704
+  },
+  {
+   "start": 1323.77,
+   "end": 1341.37,
+   "startFrame": 39713,
+   "endFrame": 40241
+  },
+  {
+   "start": 1346.01,
+   "end": 1357.7,
+   "startFrame": 40380,
+   "endFrame": 40731
+  },
+  {
+   "start": 1358.09,
+   "end": 1376.07,
+   "startFrame": 40743,
+   "endFrame": 41282
+  },
+  {
+   "start": 1376.71,
+   "end": 1387.872,
+   "startFrame": 41301,
+   "endFrame": 41636
+  },
+  {
+   "start": 1388.74,
+   "end": 1397.32,
+   "startFrame": 41662,
+   "endFrame": 41920
+  },
+  {
+   "start": 1397.98,
+   "end": 1402.61,
+   "startFrame": 41939,
+   "endFrame": 42078
+  },
+  {
+   "start": 1403.08,
+   "end": 1407.48,
+   "startFrame": 42092,
+   "endFrame": 42224
+  },
+  {
+   "start": 1407.84,
+   "end": 1445.098,
+   "startFrame": 42235,
+   "endFrame": 43353
+  },
+  {
+   "start": 1445.602,
+   "end": 1451.956,
+   "startFrame": 43368,
+   "endFrame": 43559
+  },
+  {
+   "start": 1452.924,
+   "end": 1463.662,
+   "startFrame": 43588,
+   "endFrame": 43910
+  },
+  {
+   "start": 1470.065,
+   "end": 1518.17,
+   "startFrame": 44102,
+   "endFrame": 45545
+  },
+  {
+   "start": 1518.49,
+   "end": 1535.44,
+   "startFrame": 45555,
+   "endFrame": 46063
+  },
+  {
+   "start": 1535.97,
+   "end": 1536.806,
+   "startFrame": 46079,
+   "endFrame": 46104
+  },
+  {
+   "start": 1537.138,
+   "end": 1555.235,
+   "startFrame": 46114,
+   "endFrame": 46657
+  },
+  {
+   "start": 1556.195,
+   "end": 1588.948,
+   "startFrame": 46686,
+   "endFrame": 47668
+  },
+  {
+   "start": 1589.608,
+   "end": 1612.69,
+   "startFrame": 47688,
+   "endFrame": 48381
+  },
+  {
+   "start": 1612.98,
+   "end": 1622.024,
+   "startFrame": 48389,
+   "endFrame": 48661
+  },
+  {
+   "start": 1623.188,
+   "end": 1657.154,
+   "startFrame": 48696,
+   "endFrame": 49715
+  },
+  {
+   "start": 1657.702,
+   "end": 1688.64,
+   "startFrame": 49731,
+   "endFrame": 50659
+  },
+  {
+   "start": 1690.16,
+   "end": 1693.815,
+   "startFrame": 50705,
+   "endFrame": 50814
+  },
+  {
+   "start": 1698.615,
+   "end": 1705.69,
+   "startFrame": 50958,
+   "endFrame": 51171
+  },
+  {
+   "start": 1705.99,
+   "end": 1746.69,
+   "startFrame": 51180,
+   "endFrame": 52401
+  },
+  {
+   "start": 1747.382,
+   "end": 1771.81,
+   "startFrame": 52421,
+   "endFrame": 53154
+  },
+  {
+   "start": 1774.194,
+   "end": 1797.26,
+   "startFrame": 53226,
+   "endFrame": 53918
+  },
+  {
+   "start": 1797.99,
+   "end": 1871.4,
+   "startFrame": 53940,
+   "endFrame": 56142
+  },
+  {
+   "start": 1871.85,
+   "end": 1967.2,
+   "startFrame": 56156,
+   "endFrame": 59016
+  },
+  {
+   "start": 1967.46,
+   "end": 1977.84,
+   "startFrame": 59024,
+   "endFrame": 59335
+  },
+  {
+   "start": 1978.26,
+   "end": 2039.206,
+   "startFrame": 59348,
+   "endFrame": 61176
+  },
+  {
+   "start": 2040.07,
+   "end": 2047.194,
+   "startFrame": 61202,
+   "endFrame": 61416
+  },
+  {
+   "start": 2047.51,
+   "end": 2085.26,
+   "startFrame": 61425,
+   "endFrame": 62558
+  },
+  {
+   "start": 2088.028,
+   "end": 2089.278,
+   "startFrame": 62641,
+   "endFrame": 62678
+  },
+  {
+   "start": 2098.366,
+   "end": 2101.85,
+   "startFrame": 62951,
+   "endFrame": 63056
+  },
+  {
+   "start": 2102.12,
+   "end": 2118.31,
+   "startFrame": 63064,
+   "endFrame": 63549
+  },
+  {
+   "start": 2118.77,
+   "end": 2124.71,
+   "startFrame": 63563,
+   "endFrame": 63741
+  },
+  {
+   "start": 2125.05,
+   "end": 2144.434,
+   "startFrame": 63752,
+   "endFrame": 64333
+  },
+  {
+   "start": 2146.614,
+   "end": 2150.665,
+   "startFrame": 64398,
+   "endFrame": 64520
+  },
+  {
+   "start": 2152.15,
+   "end": 2154.63,
+   "startFrame": 64564,
+   "endFrame": 64639
+  },
+  {
+   "start": 2154.98,
+   "end": 2184.76,
+   "startFrame": 64649,
+   "endFrame": 65543
+  },
+  {
+   "start": 2185.14,
+   "end": 2217.082,
+   "startFrame": 65554,
+   "endFrame": 66512
+  },
+  {
+   "start": 2219.178,
+   "end": 2267.62,
+   "startFrame": 66575,
+   "endFrame": 68029
+  },
+  {
+   "start": 2267.89,
+   "end": 2318.65,
+   "startFrame": 68037,
+   "endFrame": 69560
+  },
+  {
+   "start": 2332.534,
+   "end": 2388.14,
+   "startFrame": 69976,
+   "endFrame": 71644
+  },
+  {
+   "start": 2388.52,
+   "end": 2390.0,
+   "startFrame": 71656,
+   "endFrame": 71700
+  },
+  {
+   "start": 2390.27,
+   "end": 2392.8,
+   "startFrame": 71708,
+   "endFrame": 71784
+  }
+ ]
+}
