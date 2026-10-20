@@ -160,7 +160,7 @@ shorts-only маршрутом (в `shorts.json` поле `media` = имя за�
 
 ```
 transcribe.py → indexed.py → Claude: delete.json → fillers.py → edl.py ... 30 longform
-  → review.py (ОБЯЗАТЕЛЬНО показать) → faces_1fps.json → smartcut.py ... [--profile longform]
+  → review.py (ОБЯЗАТЕЛЬНО показать) → faces_1fps.py → smartcut.py ... [--profile longform]
 ```
 
 - **delete.json** режет не только срывы и дубли, но и (проверено по правке автора): **повторные пересказы
