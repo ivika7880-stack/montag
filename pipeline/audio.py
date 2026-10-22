@@ -42,6 +42,26 @@ def cosine_window(n: int) -> np.ndarray:
     return (0.5 * (1.0 - np.cos(np.pi * i / (n - 1)))).astype(np.float32)
 
 
+def measure_lufs(track: np.ndarray) -> float:
+    """Integrated loudness (LUFS) of a mono 48 kHz track, via ffmpeg ebur128."""
+    import re
+    with tempfile.TemporaryDirectory() as td:
+        wav = Path(td) / "m.wav"
+        sf.write(wav, track, SR, subtype="PCM_16")
+        r = subprocess.run(["ffmpeg", "-nostats", "-i", str(wav), "-af", "ebur128", "-f", "null", "-"],
+                           capture_output=True, text=True)
+    return float(re.findall(r"I:\s+(-?\d+\.\d+) LUFS", r.stderr)[-1])
+
+
+def gain_to_lufs(track: np.ndarray, target: float, peak_limit_db: float = -1.0):
+    """LINEAR gain only (no compressor, no denoise): raise/lower the whole track to `target` LUFS,
+    never letting the peak go above `peak_limit_db` dBFS. Returns (track, applied_gain_db)."""
+    cur = measure_lufs(track)
+    peak_db = 20 * np.log10(float(np.max(np.abs(track))) + 1e-9)
+    gain = min(target - cur, peak_limit_db - peak_db)
+    return (track * np.float32(10 ** (gain / 20))).astype(np.float32), gain, cur
+
+
 def build(props_path: Path, source: Path) -> None:
     props = json.loads(props_path.read_text(encoding="utf-8"))
     fps = props["fps"]
@@ -94,6 +114,10 @@ def build(props_path: Path, source: Path) -> None:
     if max_end > len(y):
         raise SystemExit(f"segment audio {max_end} exceeds source {len(y)} samples")
 
+    target = props.get("targetLufs")           # long-form: plain gain to a target loudness
+    if target is not None:
+        track, gain, cur = gain_to_lufs(track, float(target))
+        print(f"gain {gain:+.1f} dB: {cur:.1f} -> {cur + gain:.1f} LUFS (target {target}, linear gain only)")
     sf.write(out_path, track, SR, subtype="PCM_16")
 
     # Wire the track into the props so the composition mutes video and plays it.

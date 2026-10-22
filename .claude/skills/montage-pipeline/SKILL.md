@@ -19,6 +19,8 @@ does (from `README.md`), tell them the three ways to start, and wait.
 - **Only shorts from a clip** (no full 16:9 edit) → shorts-only route: Stage 1-lite + Stage 2.
 - **Shorts factory** — тексты шортсов «перепиши под меня» / «придумай по темам» →
   `script-gen` (Shorts scripts) + shorts-only route; **ремейк чужого шортса** → Stage 2R.
+- **Коллажный разбор-скандал** (спикер + красные сцены со стопками карточек, вырезки, плашки-субтитры) →
+  skill **`collage-explainer`**.
 
 Do not render or push anything without an explicit user command. Preview is Studio-only.
 
@@ -40,6 +42,11 @@ Stage 1 (тот же `<id>`; маркеры наследует `broll-gen` на 
 3. `indexed.py` → `indexed.txt` (compact view for markup).
 4. **Claude** reads `utterances.txt` + `indexed.txt`, writes `delete.json` (cut fillers/dupes —
    Deepgram filler_words is unreliable for Russian, so Claude does it).
+5. **Длинные видео:** сначала `fillers.py` (ээ/дыхание — вырезать, слова, которые ASR пропустил, — беречь), затем
+   `edl.py <work> <wav> 30 longform`. В `delete.json` помимо срывов и дублей режем **повторные пересказы мысли,
+   оговорки с самоисправлением, повтор вопроса, фразы-воду**, и показываем их в REVIEW отдельным списком.
+   Монтаж → `smartcut.py` (зум ×1.41, прямые склейки, звук −19 LUFS gain-only). Детали — `docs/PIPELINE.md`.
+   Шортсы: `edl.py … tight`.
 5. `edl.py` → `edl.json` (segments + frames). Never hand-edit; always via `delete.json`.
 6. `review.py` → `REVIEW.md`. **Mandatory review point** — show the user, wait for OK.
 7. `faces.py` → `faces.json` (face position every 5 s).

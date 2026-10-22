@@ -1,0 +1,120 @@
+{
+ "scenes": [
+  {
+   "anchorWord": 29,
+   "endWord": 44,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 29,
+     "file": "img0162/01a.jpg"
+    },
+    {
+     "anchorWord": 37,
+     "file": "img0162/01b.jpg"
+    }
+   ]
+  },
+  {
+   "anchorWord": 136,
+   "endWord": 152,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 136,
+     "file": "img0162/02a.jpg"
+    },
+    {
+     "anchorWord": 143,
+     "file": "img0162/02b.jpg"
+    }
+   ]
+  },
+  {
+   "anchorWord": 156,
+   "endWord": 167,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 156,
+     "file": "img0162/03b.jpg"
+    },
+    {
+     "anchorWord": 162,
+     "file": "img0162/03a.jpg"
+    }
+   ]
+  },
+  {
+   "anchorWord": 172,
+   "endWord": 194,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 175,
+     "file": "img0162/04a.jpg"
+    },
+    {
+     "anchorWord": 188,
+     "file": "img0162/04b.jpg"
+    }
+   ]
+  },
+  {
+   "anchorWord": 225,
+   "endWord": 244,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 226,
+     "file": "img0162/05b.jpg"
+    },
+    {
+     "anchorWord": 241,
+     "file": "img0162/05a.jpg"
+    }
+   ]
+  },
+  {
+   "anchorWord": 336,
+   "endWord": 343,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 336,
+     "file": "img0162/06b.jpg"
+    }
+   ]
+  },
+  {
+   "anchorWord": 344,
+   "endWord": 347,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 344,
+     "file": "img0162/07a.jpg"
+    },
+    {
+     "anchorWord": 346,
+     "file": "img0162/06a.jpg"
+    }
+   ]
+  },
+  {
+   "anchorWord": 490,
+   "endWord": 505,
+   "stamp": "15.8.68",
+   "cards": [
+    {
+     "anchorWord": 490,
+     "file": "img0162/08a.jpg"
+    },
+    {
+     "anchorWord": 496,
+     "file": "img0162/08b.jpg"
+    }
+   ]
+  }
+ ]
+}
